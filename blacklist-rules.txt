@@ -1,2 +1,4 @@
 payload:
   - DOMAIN-SUFFIX,gmgn.ai
+  - DOMAIN-SUFFIX,sean.date
+
