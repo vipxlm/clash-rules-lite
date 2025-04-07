@@ -1,0 +1,6 @@
+payload:
+  - DOMAIN-SUFFIX,gmgn.ai
+  - DOMAIN-SUFFIX,sean.date
+  - DOMAIN-SUFFIX,genspark.ai
+  - DOMAIN-SUFFIX,cerebras.ai
+
