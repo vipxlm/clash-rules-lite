@@ -5,4 +5,4 @@ payload:
   - DOMAIN-SUFFIX,cerebras.ai
   - DOMAIN-SUFFIX,proxmox.com
   - DOMAIN-SUFFIX,liberty.edu
-  - DOMAIN-SUFFIX,yourware.so
+  - DOMAIN-KEYWORD,yourware
