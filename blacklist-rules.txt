@@ -6,3 +6,4 @@ payload:
   - DOMAIN-SUFFIX,proxmox.com
   - DOMAIN-SUFFIX,liberty.edu
   - DOMAIN-KEYWORD,yourware
+  - DOMAIN-KEYWORD,trae
