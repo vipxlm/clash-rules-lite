@@ -8,5 +8,6 @@ payload:
   - DOMAIN-KEYWORD,yourware
   - DOMAIN-KEYWORD,trae
   - DOMAIN-SUFFIX,okta.com
+  - DOMAIN-SUFFIX,sheerid.com
 
   
