@@ -7,3 +7,6 @@ payload:
   - DOMAIN-SUFFIX,liberty.edu
   - DOMAIN-KEYWORD,yourware
   - DOMAIN-KEYWORD,trae
+  - DOMAIN-SUFFIX,okta.com
+
+  
