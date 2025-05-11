@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微软流畅设计 - 新疆15日深度环线</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script type="module">
+        import { animate, stagger } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // 卡片进入动画
+            animate(
+                ".day-card",
+                { opacity: [0, 1], y: [20, 0] },
+                { delay: stagger(0.1), duration: 0.5, easing: "ease-out" }
+            );
+
+            // 卡片悬停动画
+            const cards = document.querySelectorAll('.day-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    animate(card, { scale: 1.03 }, { duration: 0.2, easing: "ease-out" });
+                });
+                card.addEventListener('mouseleave', () => {
+                    animate(card, { scale: 1 }, { duration: 0.2, easing: "ease-out" });
+                });
+            });
+        });
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            @apply font-['Roboto',_'Segoe_UI',_sans-serif] bg-[#001E3C] text-white antialiased;
+        }
+        .acrylic-bg {
+            background-color: rgba(0, 120, 212, 0.1); /* 半透明强调色 */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px); /* Safari 支持 */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .acrylic-bg-darker {
+            background-color: rgba(0, 90, 158, 0.2); /* 较深的半透明 */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .fluent-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+        .fluent-shadow-light {
+             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        .highlight-border {
+            @apply border border-transparent hover:border-[#0078D4];
+        }
+        /* 自定义滚动条 (可选，增加流畅感) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 120, 212, 0.5);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 120, 212, 0.7);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="py-8 px-4 md:px-8 acrylic-bg-darker sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-white">
+                <i class="fas fa-map-signs mr-3 text-[#0078D4]"></i>微软流畅设计 - 新疆15日深度环线
+            </h1>
+            <div class="text-sm text-gray-300">
+                光线 · 深度 · 动效 · 材质 · 缩放
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow p-4 md:p-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-8 p-6 rounded-lg acrylic-bg fluent-shadow">
+                <h2 class="text-2xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-info-circle mr-2"></i>风格简介</h2>
+                <p class="text-gray-200 leading-relaxed">
+                    微软流畅设计 (Fluent Design System) 围绕光线、深度、动效、材质和缩放五大核心元素构建。它追求在各种设备上提供一致且沉浸式的用户体验，强调界面的直观性、响应性和美观性。
+                </p>
+                <p class="mt-2 text-sm text-gray-400">
+                    关键词: light, depth, motion, material, scale, cross-device consistency.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Day 1 & 2: 乌鲁木齐 -->
+                <div class="day-card acrylic-bg rounded-lg p-6 fluent-shadow-light transition-all duration-300 ease-out highlight-border">
+                    <h3 class="text-xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-city mr-2"></i>Day 1 & 2: 乌鲁木齐</h3>
+                    <div class="mb-4">
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-utensils mr-1 text-gray-400"></i>美食推荐:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">抓饭、烤羊肉串、大盘鸡、烤包子、馕、拉条子、羊杂汤。国际大巴扎、幸福路美食街。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-mountain mr-1 text-gray-400"></i>热门景点:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">天山天池, 新疆博物馆, 国际大巴扎, 红山公园。</p>
+                    </div>
+                </div>
+
+                <!-- Day 3: 布尔津县 -->
+                <div class="day-card acrylic-bg rounded-lg p-6 fluent-shadow-light transition-all duration-300 ease-out highlight-border">
+                    <h3 class="text-xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-water mr-2"></i>Day 3: 布尔津县 (五彩滩)</h3>
+                    <div class="mb-4">
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-fish mr-1 text-gray-400"></i>美食推荐:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">额尔齐斯河冷水鱼, 烤羊肉串, 俄罗斯风味小吃。布尔津美食街。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-palette mr-1 text-gray-400"></i>热门景点:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">五彩滩, 额尔齐斯河, 中俄老码头风情街。</p>
+                    </div>
+                </div>
+
+                <!-- Day 4 & 5: 喀纳斯 -->
+                <div class="day-card acrylic-bg rounded-lg p-6 fluent-shadow-light transition-all duration-300 ease-out highlight-border">
+                    <h3 class="text-xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-hiking mr-2"></i>Day 4 & 5: 喀纳斯</h3>
+                    <div class="mb-4">
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-leaf mr-1 text-gray-400"></i>美食推荐:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">图瓦特色美食, 喀纳斯湖冷水鱼, 野菜。贾登峪或喀纳斯新村。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-binoculars mr-1 text-gray-400"></i>热门景点:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">喀纳斯湖, “三湾” (神仙湾, 月亮湾, 卧龙湾), 观鱼台, 图瓦村落。</p>
+                    </div>
+                </div>
+
+                <!-- Day 6: 禾木村 -->
+                <div class="day-card acrylic-bg rounded-lg p-6 fluent-shadow-light transition-all duration-300 ease-out highlight-border">
+                    <h3 class="text-xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-home mr-2"></i>Day 6: 禾木村</h3>
+                    <div class="mb-4">
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-bread-slice mr-1 text-gray-400"></i>美食推荐:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">图瓦家常菜, 烤羊肉, 马奶酒, 蓝莓酱。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-camera-retro mr-1 text-gray-400"></i>热门景点:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">禾木观景平台, 禾木桥, 白桦林, 图瓦人家访, 骑马。</p>
+                    </div>
+                </div>
+
+                <!-- Day 7: 乌尔禾魔鬼城 -->
+                <div class="day-card acrylic-bg rounded-lg p-6 fluent-shadow-light transition-all duration-300 ease-out highlight-border">
+                    <h3 class="text-xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-ghost mr-2"></i>Day 7: 乌尔禾魔鬼城</h3>
+                     <div class="mb-4">
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-drumstick-bite mr-1 text-gray-400"></i>美食推荐:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">新疆家常菜, 烤肉。乌尔禾镇或克拉玛依市区。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-wind mr-1 text-gray-400"></i>热门景点:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">世界魔鬼城 (乌尔禾风城), 艾里克湖, 克拉玛依油田。</p>
+                    </div>
+                </div>
+
+                <!-- Day 8 & 9: 赛里木湖 -->
+                <div class="day-card acrylic-bg rounded-lg p-6 fluent-shadow-light transition-all duration-300 ease-out highlight-border">
+                    <h3 class="text-xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-water mr-2"></i>Day 8 & 9: 赛里木湖</h3>
+                    <div class="mb-4">
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-concierge-bell mr-1 text-gray-400"></i>美食推荐:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">高白鲑, 羊肉, 奶制品, 野菜。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-asterisk mr-1 text-gray-400"></i>热门景点:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">环湖游, 草原鲜花, 天鹅及水鸟, 星空, 骑马/徒步。</p>
+                    </div>
+                </div>
+                
+                <!-- Day 10 & 11: 那拉提草原 -->
+                <div class="day-card acrylic-bg rounded-lg p-6 fluent-shadow-light transition-all duration-300 ease-out highlight-border">
+                    <h3 class="text-xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-horse-head mr-2"></i>Day 10 & 11: 那拉提草原</h3>
+                    <div class="mb-4">
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-drumstick-bite mr-1 text-gray-400"></i>美食推荐:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">哈萨克族美食 (手抓肉, 纳仁, 马肠子), 烤全羊, 草原蘑菇。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-tree mr-1 text-gray-400"></i>热门景点:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">空中草原, 河谷草原, 盘龙谷道, 哈萨克民俗体验, 骑马。</p>
+                    </div>
+                </div>
+
+                <!-- Day 12: 巴音布鲁克草原 -->
+                <div class="day-card acrylic-bg rounded-lg p-6 fluent-shadow-light transition-all duration-300 ease-out highlight-border">
+                    <h3 class="text-xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-cloud-sun mr-2"></i>Day 12: 巴音布鲁克草原</h3>
+                    <div class="mb-4">
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-cheese mr-1 text-gray-400"></i>美食推荐:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">蒙古族美食 (手把肉, 烤羊排), 黑头羊。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-feather-alt mr-1 text-gray-400"></i>热门景点:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">九曲十八弯 (日落), 天鹅湖自然保护区, 巴西里克观景台。</p>
+                    </div>
+                </div>
+
+                <!-- Day 13 & 14: 库车 -->
+                <div class="day-card acrylic-bg rounded-lg p-6 fluent-shadow-light transition-all duration-300 ease-out highlight-border">
+                    <h3 class="text-xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-archway mr-2"></i>Day 13 & 14: 库车</h3>
+                    <div class="mb-4">
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-cookie-bite mr-1 text-gray-400"></i>美食推荐:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">库车大馕, 库车汤面, 烤肉, 薄皮包子。库车老城、太古里夜市。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-200 mb-1"><i class="fas fa-gopuram mr-1 text-gray-400"></i>热门景点:</h4>
+                        <p class="text-sm text-gray-300 leading-relaxed">天山神秘大峡谷, 克孜尔千佛洞, 库车王府, 库车大寺, 苏巴什佛寺遗址。</p>
+                    </div>
+                </div>
+                
+                <!-- Day 15: 返程 -->
+                <div class="day-card acrylic-bg rounded-lg p-6 fluent-shadow-light transition-all duration-300 ease-out highlight-border md:col-span-2 lg:col-span-1">
+                    <h3 class="text-xl font-semibold mb-3 text-[#00A3FF]"><i class="fas fa-plane-departure mr-2"></i>Day 15: 库车 — 乌鲁木齐 — 返程</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">根据航班时间，可在库车市区购买一些当地特产，如库车小白杏干、药茶等。祝您旅途愉快！</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-6 px-4 md:px-8 text-center acrylic-bg-darker mt-auto">
+        <p class="text-gray-400 text-sm">&copy; 2024 新疆15日游攻略 - Fluent Design Demo. 灵感源自微软流畅设计。</p>
+        <p class="text-xs text-gray-500 mt-1">
+            关键词: light, depth, motion, material, scale, cross-device consistency
+        </p>
+    </footer>
+</body>
+</html>

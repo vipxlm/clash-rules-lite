@@ -1,6 +1,6 @@
 payload:
   - DOMAIN-SUFFIX,gmgn.ai
-  - DOMAIN-SUFFIX,sean.date
+  - DOMAIN-SUFFIX,ping.party
   - DOMAIN-SUFFIX,genspark.ai
   - DOMAIN-SUFFIX,cerebras.ai
   - DOMAIN-SUFFIX,proxmox.com

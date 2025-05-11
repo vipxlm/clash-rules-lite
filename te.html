@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站设计风格卡片</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;700;900&family=Oswald:wght@400;700&family=Inter:wght@400;700&family=Playfair+Display:wght@400;700&family=Source+Code+Pro:wght@400;700&family=Poppins:wght@400;600;700&family=Caveat:wght@700&family=Bungee&family=Press+Start+2P&family=Special+Elite&family=Merriweather:wght@400;700&family=PT+Serif:wght@400;700&family=Archivo+Black&family=DM+Serif+Display&family=Syne:wght@400;700;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', 'Inter', sans-serif; /* 默认字体，增加Inter作为备选 */
+            background-color: #f4f6f8; /* 更柔和的页面背景色 */
+            margin: 0;
+            padding: 30px; /* 增加页面内边距 */
+            display: flex;
+            justify-content: center;
+            color: #333; /* 默认文字颜色 */
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); /* 调整卡片最小宽度 */
+            gap: 30px; /* 调整卡片间距 */
+            max-width: 1920px; 
+            width: 100%;
+        }
+
+        .card {
+            border-radius: 10px; /* 统一圆角 */
+            padding: 28px; /* 统一内边距 */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); /* 更细腻的阴影 */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+            position: relative; 
+            overflow: hidden; 
+            min-height: 400px; /* 增加最小高度以容纳更多内容 */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card:hover {
+            transform: translateY(-7px) scale(1.02); 
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1); /* 默认叠加层，较浅 */
+            z-index: 1;
+            border-radius: 10px; 
+            transition: background-color 0.25s ease;
+        }
+        
+        .card:hover .card-overlay {
+            background-color: rgba(0, 0, 0, 0.05); 
+        }
+
+        .card-header, .card-body, .card-visual {
+            position: relative; 
+            z-index: 2;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px; /* 增加头部下边距 */
+        }
+
+        .card-title {
+            font-size: 1.6em; 
+            font-weight: 700; 
+        }
+
+        .card-tag {
+            font-size: 0.75em; 
+            font-weight: 600; /* 加粗标签文字 */
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px; /* 增加标签字母间距 */
+            flex-shrink: 0; 
+        }
+
+        .card-body {
+            margin-bottom: 20px; 
+            flex-grow: 1; 
+        }
+
+        .description-zh {
+            font-size: 0.95em; /* 调整中文描述大小 */
+            line-height: 1.65;
+            margin-bottom: 12px; /* 增加描述间距 */
+        }
+
+        .description-en {
+            font-size: 0.8em; 
+            line-height: 1.55;
+            opacity: 0.8; 
+            font-style: italic; /* 英文描述使用斜体 */
+        }
+        .description-en strong { /* 英文关键词加粗 */
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+
+        .card-visual {
+            margin-top: auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 40px; 
+            font-size: 1.8em; 
+        }
+
+        /* --- 网站设计风格卡片特定样式 --- */
+
+        /* 1. 极简主义 (Minimalism) */
+        .card[data-style="minimalism"] {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF; 
+            color: #111;
+        }
+        .card[data-style="minimalism"] .card-overlay { background-color: rgba(255,255,255,0); }
+        .card[data-style="minimalism"] .card-tag { background-color: #EAEAEA; color: #555; border: 1px solid #DDD; }
+        .card[data-style="minimalism"] .card-visual { width: 40px; height: 3px; background-color: #333; }
+
+        /* 2. 扁平化设计 (Flat Design) */
+        .card[data-style="flat-design"] {
+            font-family: 'Poppins', sans-serif;
+            background-color: #3498DB; /* 扁平蓝 */
+            color: #FFFFFF;
+        }
+        .card[data-style="flat-design"] .card-overlay { background-color: rgba(0,0,0,0.05); }
+        .card[data-style="flat-design"] .card-tag { background-color: #2980B9; color: #FFFFFF; }
+        .card[data-style="flat-design"] .card-visual { display: flex; gap: 5px; }
+        .card[data-style="flat-design"] .card-visual span { width: 22px; height: 22px; background-color: #ECF0F1; border-radius: 4px; }
+        
+        /* 3. 质感设计 (Material Design) */
+        .card[data-style="material-design"] {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FFFFFF;
+            color: #212121;
+            border-top: 4px solid #FFC107; /* Material 黄色顶部边框 */
+        }
+        .card[data-style="material-design"] .card-overlay { background-color: rgba(0,0,0,0.02); }
+        .card[data-style="material-design"] .card-tag { background-color: #FFC107; color: #212121; }
+        .card[data-style="material-design"] .card-visual {
+            width: 32px; height: 32px; background-color: #4CAF50; /* Material 绿色FAB */
+            border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex; align-items: center; justify-content: center; font-size: 1.2em; color: white; content: "+"; /* 模拟FAB图标 */
+        }
+        .card[data-style="material-design"] .card-visual::before { content: "+"; }
+
+
+        /* 4. 苹果设计风格 (Apple Design) */
+        .card[data-style="apple-design"] {
+            font-family: 'Inter', '-apple-system', sans-serif;
+            background-color: #F5F5F7;
+            color: #1D1D1F;
+        }
+        .card[data-style="apple-design"] .card-overlay { background-color: rgba(0,0,0,0.02); }
+        .card[data-style="apple-design"] .card-tag { background-color: #007AFF; color: white; }
+        .card[data-style="apple-design"] .card-visual { font-size: 2.4em; color: #8A8A8E; } /* Apple Logo */
+
+        /* 5. 微软流畅设计 (Microsoft Fluent Design) */
+        .card[data-style="fluent-design"] {
+            font-family: 'Roboto', 'Segoe UI', sans-serif;
+            background-color: #001E3C; /* 深蓝背景 */
+            color: #FFFFFF;
+        }
+        .card[data-style="fluent-design"] .card-overlay { background: linear-gradient(135deg, rgba(0, 120, 212, 0.2), rgba(0, 90, 158, 0.4)); }
+        .card[data-style="fluent-design"] .card-tag { background-color: #0078D4; color: white; }
+        .card[data-style="fluent-design"] .card-visual { display: flex; gap: 3px; }
+        .card[data-style="fluent-design"] .card-visual span {
+            width: 16px; height: 16px; border-radius: 2px;
+            background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);
+        }
+        .card[data-style="fluent-design"] .card-visual span:nth-child(1) { background-color: rgba(0,120,212,0.7); } /* Acrylic hint */
+        .card[data-style="fluent-design"] .card-visual span:nth-child(2) { transform: scale(0.8); opacity: 0.7; }
+
+        /* 6. 玻璃拟态 (Glassmorphism) */
+        .card[data-style="glassmorphism"] {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://placehold.co/600x400/6a11cb/2575fc?text=') center/cover; /* 示例模糊背景 */
+            color: #FFFFFF;
+        }
+        .card[data-style="glassmorphism"] .card-overlay {
+            background-color: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(10px); 
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card[data-style="glassmorphism"] .card-tag { background-color: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.25); }
+        .card[data-style="glassmorphism"] .card-visual { opacity: 0.8; font-size: 2em; } /* 冰块图标 */
+
+        /* 7. 新拟态 (Neumorphism) */
+        .card[data-style="neumorphism"] {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0e5ec; 
+            color: #5B6A7A;
+        }
+        .card[data-style="neumorphism"] .card-overlay { background-color: rgba(0,0,0,0); }
+        .card[data-style="neumorphism"] .card-tag {
+            background-color: #e0e5ec; color: #525F6C;
+            box-shadow: 3px 3px 7px #b8bec7, -3px -3px 7px #ffffff;
+        }
+        .card[data-style="neumorphism"] .card-title { color: #3E4A56; }
+        .card[data-style="neumorphism"] .card-visual {
+            width: 30px; height: 30px; border-radius: 8px;
+            background: #e0e5ec;
+            box-shadow: inset 4px 4px 8px #b8bec7, inset -4px -4px 8px #ffffff;
+        }
+
+        /* 8. 粗野主义 (Brutalism) */
+        .card[data-style="brutalism"] {
+            font-family: 'Source Code Pro', 'Courier New', monospace;
+            background-color: #FFFF00; /* 亮黄 */
+            color: #000000;
+            border: 3px solid #000000;
+        }
+        .card[data-style="brutalism"] .card-overlay { background-color: rgba(0,0,0,0); }
+        .card[data-style="brutalism"] .card-tag { background-color: #000000; color: #FFFF00; font-weight: bold; border-radius: 0; }
+        .card[data-style="brutalism"] .card-visual { font-weight: bold; font-size: 1.2em; border: 2px solid black; padding: 2px 5px; }
+
+        /* 9. 便当网格 (Bento Grid) */
+        .card[data-style="bento-grid"] {
+            font-family: 'Inter', sans-serif;
+            background-color: #1A202C; /* 深色背景 */
+            color: #E2E8F0;
+        }
+        .card[data-style="bento-grid"] .card-overlay { background-color: rgba(0,0,0,0.2); }
+        .card[data-style="bento-grid"] .card-tag { background-color: #4A5568; color: #CBD5E0; }
+        .card[data-style="bento-grid"] .card-visual { display: grid; grid-template-columns: repeat(3, 12px); grid-template-rows: repeat(2, 12px); gap: 3px; }
+        .card[data-style="bento-grid"] .card-visual div { background-color: #718096; border-radius: 3px;}
+        .card[data-style="bento-grid"] .card-visual div:nth-child(1) { grid-column: span 2; background-color: #A0AEC0; }
+        .card[data-style="bento-grid"] .card-visual div:nth-child(4) { grid-row: span 2; background-color: #A0AEC0; }
+
+
+        /* 10. 现代风格 (Modern Web Design) */
+        .card[data-style="modern-design"] {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+            color: #2D3748;
+            border-left: 4px solid #4FD1C5; /* 现代青色左边框 */
+        }
+        .card[data-style="modern-design"] .card-overlay { background-color: rgba(0,0,0,0.01); }
+        .card[data-style="modern-design"] .card-tag { background-color: #4FD1C5; color: #1A202C; }
+        .card[data-style="modern-design"] .card-visual { font-size: 1.8em; color: #4FD1C5; } /* 抽象线条或几何形状 */
+        .card[data-style="modern-design"] .card-visual::before { content: "✧"; }
+
+
+        /* 11. 复古/怀旧风格 (Retro/Vintage Web Design) */
+        .card[data-style="retro-vintage"] {
+            font-family: 'Playfair Display', serif;
+            background-color: #FDF5E6; /* 米色/旧纸色 */
+            color: #5D4037; /* 深棕色 */
+        }
+        .card[data-style="retro-vintage"] .card-overlay { background-image: linear-gradient(rgba(245,222,179,0.1), rgba(210,180,140,0.2)); } /* 细微纹理感 */
+        .card[data-style="retro-vintage"] .card-tag { background-color: #A1887F; color: #FFFFFF; font-family: 'Special Elite', cursive; }
+        .card[data-style="retro-vintage"] .card-visual { font-size: 1.8em; color: #795548; } /* 旧式徽章或邮票图标 */
+        .card[data-style="retro-vintage"] .card-visual::before { content:"📜"; }
+
+
+        /* 12. 手绘/插画风格 (Hand-drawn/Illustrated) */
+        .card[data-style="hand-drawn"] {
+            font-family: 'Caveat', cursive;
+            background-color: #FFF9F0; /* 温暖的米白色 */
+            color: #4A4A4A;
+        }
+        .card[data-style="hand-drawn"] .card-overlay { background-color: rgba(255,240,220,0.1); }
+        .card[data-style="hand-drawn"] .card-tag { background-color: #FFDAB9; color: #8B4513; border: 1px dashed #D2B48C; }
+        .card[data-style="hand-drawn"] .card-title { font-size: 1.8em; }
+        .card[data-style="hand-drawn"] .card-visual { font-size: 2em; color: #FF8C69; } /* 手绘风格的图标 */
+        .card[data-style="hand-drawn"] .card-visual::before { content: "✏️"; }
+
+
+        /* 13. 暗黑模式 (Dark Mode) */
+        .card[data-style="dark-mode"] {
+            font-family: 'Inter', sans-serif;
+            background-color: #1A1A1A;
+            color: #E0E0E0;
+        }
+        .card[data-style="dark-mode"] .card-overlay { background-color: rgba(255,255,255,0.03); }
+        .card[data-style="dark-mode"] .card-tag { background-color: #333333; color: #00AFFF; border: 1px solid #444;} 
+        .card[data-style="dark-mode"] .card-visual { color: #777777; } 
+
+        /* 14. 瑞士风格 (Swiss Style) */
+        .card[data-style="swiss-style"] {
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            background-color: #FFFFFF; 
+            color: #111111;
+            text-align: left; 
+        }
+        .card[data-style="swiss-style"] .card-overlay { background-color: rgba(0,0,0,0); }
+        .card[data-style="swiss-style"] .card-tag { background-color: #FF0000; color: white; font-weight: bold; border-radius: 0;}
+        .card[data-style="swiss-style"] .card-title { font-size: 1.9em; font-weight: 900; letter-spacing: -0.5px; text-transform: uppercase;}
+        .card[data-style="swiss-style"] .description-zh { font-size: 0.9em; }
+        .card[data-style="swiss-style"] .card-visual {
+            width: 30px; height: 30px; background-color: #111111; 
+        }
+
+        /* 15. 大标题排版 (Hero Typography) */
+        .card[data-style="hero-typography"] {
+            font-family: 'Syne', sans-serif; /* 或者 Archivo Black */
+            background-color: #F8F8F8;
+            color: #1C1C1C;
+            display: flex; /* 确保文字能撑满 */
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+            text-align: center;
+        }
+        .card[data-style="hero-typography"] .card-overlay { background-color: rgba(0,0,0,0.02); }
+        .card[data-style="hero-typography"] .card-tag { background-color: #1C1C1C; color: #F8F8F8; }
+        .card[data-style="hero-typography"] .card-title { font-size: 2.8em; line-height: 1.1; font-weight: 800; margin-bottom: 10px !important; }
+        .card[data-style="hero-typography"] .description-zh { font-size: 0.85em; max-width: 80%; margin: 0 auto 10px auto; }
+        .card[data-style="hero-typography"] .description-en { font-size: 0.75em; max-width: 80%; margin: 0 auto;}
+        .card[data-style="hero-typography"] .card-visual { display: none; } /* 标题本身就是视觉 */
+
+
+        /* 16. 单页网站/视差滚动 (Single Page/Parallax) */
+        .card[data-style="single-page"] {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(160deg, #6DD5FA, #FF758C); /* 渐变背景暗示层次 */
+            color: #FFFFFF;
+        }
+        .card[data-style="single-page"] .card-overlay { background-color: rgba(0,0,0,0.15); }
+        .card[data-style="single-page"] .card-tag { background-color: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .card[data-style="single-page"] .card-visual { font-size: 2.2em; } /* 向下箭头或滚动条图标 */
+        .card[data-style="single-page"] .card-visual::before { content: "⇊"; opacity: 0.7; }
+
+
+        /* 17. 孟菲斯设计 (Memphis Design) */
+        .card[data-style="memphis-design"] {
+            font-family: 'Bungee', cursive;
+            background-color: #F0F4F8; /* 浅灰蓝背景 */
+        }
+        .card[data-style="memphis-design"] .card-overlay { background-color: rgba(255,255,255,0.2); }
+        .card[data-style="memphis-design"] .card-tag { background-color: #FF6B6B; color: white; transform: skew(-6deg); }
+        .card[data-style="memphis-design"] .card-title { color: #4ECDC4; text-shadow: 2px 2px #FFE66D; }
+        .card[data-style="memphis-design"] .description-zh { color: #545454; }
+        .card[data-style="memphis-design"] .description-en { color: #777; }
+        .card[data-style="memphis-design"] .card-visual { display: flex; align-items: baseline; gap: 4px;}
+        .card[data-style="memphis-design"] .card-visual .shape1 { font-size: 1.5em; color: #FFE66D; content:"~"; } /* Squiggle */
+        .card[data-style="memphis-design"] .card-visual .shape2 { width:15px; height:15px; background-color: #45B7D1; border-radius:50%; border: 2px solid #1A535C;} /* Circle */
+        .card[data-style="memphis-design"] .card-visual .shape3 { width:12px; height:12px; background-color: #FF6B6B; transform: rotate(30deg); border: 2px solid #AD343E;} /* Square */
+
+
+        /* 18. 3D 元素/插画 (3D Elements) */
+        .card[data-style="3d-elements"] {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #232526; 
+            background: linear-gradient(to right, #414345, #232526); /* 深灰渐变 */
+            color: #EAEAEA;
+        }
+        .card[data-style="3d-elements"] .card-overlay { background-color: rgba(0,0,0,0.3); }
+        .card[data-style="3d-elements"] .card-tag { background-color: #7F00FF; color: white; } /* 紫色 */
+        .card[data-style="3d-elements"] .card-visual { font-size: 2.2em; color: #00BCD4; transform: perspective(100px) rotateY(20deg) rotateX(10deg); } /* 3D效果的立方体 */
+        .card[data-style="3d-elements"] .card-visual::before { content: "🧊"; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+
+
+        /* 19. 赛博朋克 (Cyberpunk Web Design) */
+        .card[data-style="cyberpunk-design"] {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #0F0F23; /* 非常暗的蓝紫色 */
+            color: #00FFFF; /* 霓虹青色 */
+        }
+        .card[data-style="cyberpunk-design"] .card-overlay { background: linear-gradient(rgba(255,0,255,0.1), rgba(0,255,255,0.1)); }
+        .card[data-style="cyberpunk-design"] .card-tag { background-color: #FF00FF; color: #0F0F23; font-size: 0.6em; padding: 6px 8px;}
+        .card[data-style="cyberpunk-design"] .card-title { font-size: 1.3em; text-shadow: 0 0 5px #FF00FF, 0 0 10px #00FFFF; }
+        .card[data-style="cyberpunk-design"] .description-zh { font-size: 0.8em; line-height: 1.5; color: #9E9E9E; }
+        .card[data-style="cyberpunk-design"] .description-en { font-size: 0.7em; color: #757575;}
+        .card[data-style="cyberpunk-design"] .card-visual { font-family: 'VT323', monospace; font-size: 1.8em; color: #FF00FF; } /* Glitchy text/icon */
+        .card[data-style="cyberpunk-design"] .card-visual::before { content: "/>_"; }
+
+        /* 20. 不对称布局 (Asymmetrical Layout) */
+        .card[data-style="asymmetrical-layout"] {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FAFAFA;
+            color: #333;
+        }
+        .card[data-style="asymmetrical-layout"] .card-overlay { background-color: rgba(0,0,0,0.01); }
+        .card[data-style="asymmetrical-layout"] .card-tag { background-color: #FFCA28; color: #424242; } /* 黄色 */
+        .card[data-style="asymmetrical-layout"] .card-visual { display: flex; gap: 5px; align-items: flex-end; }
+        .card[data-style="asymmetrical-layout"] .card-visual span { background-color: #BDBDBD; border-radius: 3px; }
+        .card[data-style="asymmetrical-layout"] .card-visual span:nth-child(1) { width: 20px; height: 30px; }
+        .card[data-style="asymmetrical-layout"] .card-visual span:nth-child(2) { width: 30px; height: 20px; background-color: #FFCA28; }
+
+
+        /* 21. 照片驱动设计 (Photography-centric Design) */
+        .card[data-style="photography-centric"] {
+            font-family: 'Merriweather', serif;
+            background-image: url('https://placehold.co/600x400/cccccc/333333?text=IMAGE'); /* 占位图 */
+            background-size: cover;
+            background-position: center;
+            color: #FFFFFF;
+        }
+        .card[data-style="photography-centric"] .card-overlay { background-color: rgba(0,0,0,0.45); } /* 确保文字可读 */
+        .card[data-style="photography-centric"] .card-tag { background-color: rgba(255,255,255,0.8); color: #333; }
+        .card[data-style="photography-centric"] .card-visual { font-size: 2em; color: rgba(255,255,255,0.7); } /* 相机图标 */
+        .card[data-style="photography-centric"] .card-visual::before { content: "📷"; }
+
+
+        /* 22. 奢侈/高端风格 (Luxury/High-end) */
+        .card[data-style="luxury-high-end"] {
+            font-family: 'DM Serif Display', serif;
+            background-color: #121212; /* 深黑/炭黑 */
+            color: #E0C097; /* 香槟金/米金 */
+        }
+        .card[data-style="luxury-high-end"] .card-overlay { background-color: rgba(0,0,0,0.2); }
+        .card[data-style="luxury-high-end"] .card-tag { background-color: #B08D57; color: #000000; font-family: 'PT Serif', serif; text-transform: none; letter-spacing: 1px; }
+        .card[data-style="luxury-high-end"] .card-title { font-size: 1.8em; letter-spacing: 0.5px; }
+        .card[data-style="luxury-high-end"] .description-zh { color: #B3B3B3; }
+        .card[data-style="luxury-high-end"] .description-en { color: #8C8C8C; }
+        .card[data-style="luxury-high-end"] .card-visual { font-size: 1.8em; color: #B08D57; } /* 钻石或皇冠图标 */
+        .card[data-style="luxury-high-end"] .card-visual::before { content: "💎"; }
+
+
+        /* 23. 抽象艺术风格 (Abstract Web Design) */
+        .card[data-style="abstract-design"] {
+            font-family: 'Syne', sans-serif;
+            background: linear-gradient(45deg, #FF9A8B 0%, #FF6A88 50%, #FF99AC 100%); /* 抽象渐变 */
+            color: #FFFFFF;
+        }
+        .card[data-style="abstract-design"] .card-overlay { background-color: rgba(0,0,0,0.1); }
+        .card[data-style="abstract-design"] .card-tag { background-color: rgba(255,255,255,0.25); color: white; }
+        .card[data-style="abstract-design"] .card-visual { font-size: 2.5em; opacity: 0.7; } /* 抽象形状 */
+        .card[data-style="abstract-design"] .card-visual::before { content: "❖"; }
+
+
+        /* 24. 拼贴风格 (Collage Style) */
+        .card[data-style="collage-style"] {
+            font-family: 'Special Elite', cursive; /* 手写/打字机感 */
+            background-color: #F4E9E0; /* 纸张颜色 */
+            color: #5C5C5C;
+        }
+        .card[data-style="collage-style"] .card-overlay { background-color: rgba(200,180,160,0.1); }
+        .card[data-style="collage-style"] .card-tag { background-color: #D7BFA8; color: #704214; border: 1px solid #B89C80; transform: rotate(1deg); }
+        .card[data-style="collage-style"] .card-visual { display: flex; gap: -5px; /* 制造重叠感 */ }
+        .card[data-style="collage-style"] .card-visual span {
+            width: 25px; height: 25px; border: 1.5px solid #A0846C;
+            display: flex; align-items: center; justify-content: center; font-size: 0.7em;
+        }
+        .card[data-style="collage-style"] .card-visual span:nth-child(1) { background-color: #EADBCB; transform: rotate(-5deg); content: "A"; }
+        .card[data-style="collage-style"] .card-visual span:nth-child(2) { background-color: #DCD1C6; transform: rotate(3deg) translateX(-5px); content: "B"; }
+
+
+        /* 25. 可持续/环保主题风格 (Eco-friendly/Sustainable) */
+        .card[data-style="eco-friendly"] {
+            font-family: 'Poppins', sans-serif;
+            background-color: #E8F5E9; /* 淡绿色 */
+            color: #2E7D32; /* 深绿色 */
+        }
+        .card[data-style="eco-friendly"] .card-overlay { background-color: rgba(200,230,200,0.15); }
+        .card[data-style="eco-friendly"] .card-tag { background-color: #66BB6A; color: #1B5E20; }
+        .card[data-style="eco-friendly"] .card-visual { font-size: 2.2em; color: #4CAF50; } /* 叶子图标 */
+        .card[data-style="eco-friendly"] .card-visual::before { content: "🌿"; }
+
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+
+        <a href="MK/minimalism.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="minimalism">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">极简主义</span>
+                    <span class="card-tag">Minimalism</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">核心在于“少即是多”。通过大量留白、简洁的元素、功能至上的设计、有限的调色板和清晰的排版，实现极致的纯粹与高效。</p>
+                    <p class="description-en">Core: <strong>whitespace</strong>, <strong>simplicity</strong>, <strong>function-first</strong>, <strong>limited color palette</strong>, <strong>clean typography</strong>, <strong>less is more</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/flat-design.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="flat-design">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">扁平化设计</span>
+                    <span class="card-tag">Flat Design</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">摒弃装饰性元素如阴影和渐变，采用纯色块、简约图标和清晰的排版，构建干净利落的二维界面，注重可用性。</p>
+                    <p class="description-en">Focus: <strong>no shadows</strong>, <strong>no gradients</strong>, <strong>solid colors</strong>, <strong>simple icons</strong>, <strong>clean typography</strong>, <strong>2D interface</strong>.</p>
+                </div>
+                <div class="card-visual"><span></span><span></span></div>
+            </div>
+        </a>
+
+        <a href="MK/material-design.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="material-design">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">质感设计</span>
+                    <span class="card-tag">Material Design</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">谷歌倡导，以物理世界的隐喻为基础，通过卡片式布局、Z轴深度感、有意义的动画、响应式交互和大胆的图形元素，创造直观体验。</p>
+                    <p class="description-en">Google's style: <strong>material metaphor</strong>, <strong>card-based layout</strong>, <strong>z-depth</strong>, <strong>meaningful animation</strong>, <strong>responsive interaction</strong>, <strong>bold graphics</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/apple-design.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="apple-design">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">苹果设计风格</span>
+                    <span class="card-tag">Apple Design</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">强调清晰、直观和一致性。通过适度的模糊与阴影营造深度感，运用优雅的过渡动画，始终以内容为中心进行设计。</p>
+                    <p class="description-en">Principles: <strong>clarity</strong>, <strong>intuitive</strong>, <strong>consistency</strong>, <strong>depth (subtle blur & shadow)</strong>, <strong>elegant transitions</strong>, <strong>content-centric</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/fluent-design.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="fluent-design">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">微软流畅设计</span>
+                    <span class="card-tag">Fluent Design</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">围绕光线、深度、动效、材质和缩放五大核心元素构建。追求跨设备的一致性和沉浸式的用户体验。</p>
+                    <p class="description-en">Elements: <strong>light</strong>, <strong>depth</strong>, <strong>motion</strong>, <strong>material</strong>, <strong>scale</strong>, ensuring <strong>cross-device consistency</strong>.</p>
+                </div>
+                <div class="card-visual"><span></span><span></span></div>
+            </div>
+        </a>
+
+        <a href="MK/glassmorphism.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="glassmorphism">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">玻璃拟态</span>
+                    <span class="card-tag">Glassmorphism</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">通过背景模糊、半透明材质、细腻的边框和悬浮感，创造出富有层次感和现代感的界面，如同磨砂玻璃一般。</p>
+                    <p class="description-en">Features: <strong>background blur</strong>, <strong>translucency</strong>, <strong>subtle borders</strong>, <strong>floating feel</strong>, creating a <strong>layered</strong>, <strong>modern</strong> look.</p>
+                </div>
+                <div class="card-visual">🧊</div>
+            </div>
+        </a>
+
+        <a href="MK/neumorphism.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="neumorphism">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">新拟态</span>
+                    <span class="card-tag">Neumorphism</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">利用柔和的内外阴影，在单色背景上模拟出元素被挤压或凸起的效果，营造简约界面下的触感错觉。</p>
+                    <p class="description-en">Style: <strong>soft shadows</strong>, <strong>extruded/pressed effect</strong> on a <strong>monochromatic background</strong>, <strong>minimalist UI</strong> with a <strong>tactile illusion</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/brutalism.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="brutalism">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">粗野主义</span>
+                    <span class="card-tag">Brutalism</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">追求原始的HTML感，通过鲜明对比、单调字体、无修饰的元素，展现大胆、实验性甚至反主流的设计态度。</p>
+                    <p class="description-en">Characterized by: <strong>raw HTML feel</strong>, <strong>stark contrast</strong>, <strong>monospaced fonts</strong>, <strong>unadorned</strong>, <strong>bold</strong>, <strong>experimental</strong>, <strong>anti-establishment</strong>.</p>
+                </div>
+                <div class="card-visual">RAW</div>
+            </div>
+        </a>
+
+        <a href="MK/bento-grid.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="bento-grid">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">便当网格</span>
+                    <span class="card-tag">Bento UI</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">采用模块化布局，将信息组织成独立的信息块。通过不对称网格和清晰的视觉层级，实现内容的高效展示。</p>
+                    <p class="description-en">Layout: <strong>modular layout</strong> with <strong>information blocks</strong>, often an <strong>asymmetrical grid</strong>, <strong>clear visual hierarchy</strong> for <strong>content organization</strong> and <strong>efficient display</strong>.</p>
+                </div>
+                <div class="card-visual"><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
+        </a>
+
+        <a href="MK/modern-design.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="modern-design">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">现代风格</span>
+                    <span class="card-tag">Modern</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">以简洁线条、大图背景、清晰排版为特点，强调响应式设计、用户友好性和功能驱动，是当前主流的网站设计趋势。</p>
+                    <p class="description-en">Traits: <strong>clean lines</strong>, <strong>large hero images</strong>, <strong>clear typography</strong>, <strong>responsive</strong>, <strong>user-friendly</strong>, and <strong>function-driven</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/retro-vintage.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="retro-vintage">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">复古/怀旧风格</span>
+                    <span class="card-tag">Retro/Vintage</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">借鉴旧时代的设计元素，如复古字体、纹理背景、褪色效果，并采用特定历史时期（如50年代、80年代、Y2K）的配色方案。</p>
+                    <p class="description-en">Incorporates: <strong>old-era elements</strong>, <strong>retro fonts</strong>, <strong>textured backgrounds</strong>, <strong>faded effects</strong>, and <strong>period-specific color palettes</strong> (e.g., 50s, 80s, Y2K).</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/hand-drawn.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="hand-drawn">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">手绘/插画风格</span>
+                    <span class="card-tag">Illustrated</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">通过个性化的创意插图、手写字体和有机的形状，营造亲和力，赋予网站独特的故事感和艺术气息。</p>
+                    <p class="description-en">Emphasizes: <strong>personalization</strong>, <strong>creative illustrations</strong>, <strong>handwritten fonts</strong>, <strong>organic shapes</strong>, <strong>approachability</strong>, and <strong>storytelling</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/dark-mode.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="dark-mode">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">暗黑模式</span>
+                    <span class="card-tag">Dark Mode</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">采用深色背景和高对比度文本，有助于节省能源（OLED屏幕），减轻眼部疲劳，并赋予界面现代感和优雅气质。</p>
+                    <p class="description-en">Uses: <strong>dark background</strong>, <strong>high-contrast text</strong>, aids <strong>energy saving (OLED)</strong>, <strong>reduced eye strain</strong>, offering a <strong>modern</strong> and <strong>elegant</strong> feel.</p>
+                </div>
+                <div class="card-visual">🌙</div>
+            </div>
+        </a>
+
+        <a href="MK/swiss-style.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="swiss-style">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">瑞士风格</span>
+                    <span class="card-tag">Swiss Style</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">注重网格系统、无衬线字体和不对称布局。追求客观清晰的信息层级和功能性的美学表达。</p>
+                    <p class="description-en">Focuses on: <strong>grid system</strong>, <strong>sans-serif typography</strong>, <strong>asymmetrical layout</strong>, <strong>objective clarity</strong>, <strong>information hierarchy</strong>, and <strong>functional aesthetics</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/hero-typography.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="hero-typography">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">大标题排版</span>
+                    <span class="card-tag">Hero Typography</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">运用巨型字体制造视觉冲击，直接传递核心信息。设计以排版为主导，辅以简约元素和个性化字体选择。</p>
+                    <p class="description-en">Utilizes: <strong>oversized fonts</strong> for <strong>visual impact</strong> and <strong>direct messaging</strong>, <strong>typography-led</strong> design with <strong>minimalist support</strong> and <strong>custom fonts</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/single-page.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="single-page">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">单页/视差滚动</span>
+                    <span class="card-tag">Single Page</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">通过线性叙事和滚动交互，结合动态效果，营造强烈的故事感。通常采用移动优先策略和简洁的导航设计。</p>
+                    <p class="description-en">Features: <strong>linear narrative</strong>, <strong>scroll-based interaction</strong>, <strong>dynamic effects</strong>, <strong>strong storytelling</strong>, often <strong>mobile-first</strong> with <strong>simple navigation</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/memphis-design.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="memphis-design">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">孟菲斯设计</span>
+                    <span class="card-tag">Memphis</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">以大胆的几何图形、明亮的撞色、波点与条纹图案为特征，充满玩味性，是80年代复古风格的代表，敢于打破常规。</p>
+                    <p class="description-en">Known for: <strong>bold geometrics</strong>, <strong>bright color clashes</strong>, <strong>polka dots/stripes</strong>, <strong>playfulness</strong>, <strong>80s retro</strong>, and <strong>rule-breaking</strong>.</p>
+                </div>
+                <div class="card-visual"><span class="shape1">~</span><span class="shape2"></span><span class="shape3"></span></div>
+            </div>
+        </a>
+
+        <a href="MK/3d-elements.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="3d-elements">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">3D 元素/插画</span>
+                    <span class="card-tag">3D Elements</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">通过立体感、动态效果和交互式3D技术，提供沉浸式体验，常用于产品展示，富有科技感。</p>
+                    <p class="description-en">Offers: <strong>dimensionality</strong>, <strong>dynamic effects</strong>, <strong>interactive 3D</strong> for an <strong>immersive experience</strong>, great for <strong>product showcase</strong>, with a <strong>tech feel</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/cyberpunk-design.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="cyberpunk-design">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">赛博朋克</span>
+                    <span class="card-tag">Cyberpunk</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">运用霓虹灯效、暗色调、未来科技感、故障艺术和代码元素，描绘反乌托邦的数字世界。</p>
+                    <p class="description-en">Visuals: <strong>neon effects</strong>, <strong>dark tones</strong>, <strong>futuristic tech</strong>, <strong>glitch art</strong>, <strong>code elements</strong>, creating a <strong>dystopian</strong> vibe.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/asymmetrical-layout.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="asymmetrical-layout">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">不对称布局</span>
+                    <span class="card-tag">Asymmetry</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">通过动态平衡和视觉引导，打破常规布局，赋予设计现代感和创意自由，同时营造层次感。</p>
+                    <p class="description-en">Achieves: <strong>dynamic balance</strong>, <strong>visual guidance</strong>, <strong>breaking conventions</strong> for a <strong>modern feel</strong> with <strong>creative freedom</strong> and a <strong>sense of depth</strong>.</p>
+                </div>
+                <div class="card-visual"><span></span><span></span></div>
+            </div>
+        </a>
+
+        <a href="MK/photography-centric.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="photography-centric">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">照片驱动设计</span>
+                    <span class="card-tag">Photography</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">以高质量图片和全屏背景为主导，通过视觉叙事建立情感连接，文字元素简约，图片优先。</p>
+                    <p class="description-en">Led by: <strong>high-quality imagery</strong>, <strong>full-screen backgrounds</strong>, <strong>visual storytelling</strong> for <strong>emotional connection</strong>, with <strong>minimal text</strong>, <strong>image-first</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/luxury-high-end.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="luxury-high-end">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">奢侈/高端风格</span>
+                    <span class="card-tag">Luxury</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">采用精致的排版、优雅的配色、高质量的素材和充足的留白，注重细节考究，营造尊贵感。</p>
+                    <p class="description-en">Defined by: <strong>refined typography</strong>, <strong>elegant color palettes</strong>, <strong>premium assets</strong>, <strong>ample whitespace</strong>, <strong>meticulous details</strong>, evoking a <strong>sense of prestige</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/abstract-design.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="abstract-design">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">抽象艺术风格</span>
+                    <span class="card-tag">Abstract</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">运用非具象的图形、富有情感的色彩和动态的构图，进行概念表达，营造独特的艺术氛围和视觉效果。</p>
+                    <p class="description-en">Uses: <strong>non-representational graphics</strong>, <strong>color emotion</strong>, <strong>dynamic composition</strong> for <strong>conceptual expression</strong>, an <strong>artistic vibe</strong>, and <strong>unique visuals</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+        <a href="MK/collage-style.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="collage-style">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">拼贴风格</span>
+                    <span class="card-tag">Collage</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">通过多元素的组合、纹理的叠加，营造复古感和手作感。常采用不规则排版，使视觉效果丰富多样。</p>
+                    <p class="description-en">Builds with: <strong>multi-element composition</strong>, <strong>texture overlay</strong>, a <strong>vintage feel</strong> or <strong>handmade touch</strong>, <strong>irregular layout</strong> for a <strong>visually rich</strong> result.</p>
+                </div>
+                <div class="card-visual"><span>A</span><span>B</span></div>
+            </div>
+        </a>
+
+        <a href="MK/eco-friendly.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="card" data-style="eco-friendly">
+                <div class="card-overlay"></div>
+                <div class="card-header">
+                    <span class="card-title">可持续/环保主题</span>
+                    <span class="card-tag">Eco-friendly</span>
+                </div>
+                <div class="card-body">
+                    <p class="description-zh">采用自然色系、有机纹理和环保图标，传递清晰的环保信息和使命感，是典型的绿色设计。</p>
+                    <p class="description-en">Features: <strong>natural color palettes</strong>, <strong>organic textures</strong>, <strong>eco-icons</strong>, <strong>clear messaging</strong>, <strong>mission-driven</strong>, embodying <strong>green design</strong>.</p>
+                </div>
+                <div class="card-visual"></div>
+            </div>
+        </a>
+
+    </div>
+
+</body>
+</html>

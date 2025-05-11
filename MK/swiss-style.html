@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瑞士风格 - 新疆15日深度环线</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/motion@latest/+esm"></script>
+    <style type="text/tailwindcss">
+        body {
+            @apply bg-white text-[#111111] font-['Inter',_'Helvetica_Neue',_sans-serif] p-0 m-0; /* 页面背景白色，文字深黑，Inter字体 */
+            line-height: 1.6; /* 基础行高 */
+        }
+        .swiss-container {
+            @apply w-full min-h-screen p-8 md:p-12 lg:p-16; /* 容器内边距 */
+        }
+        header {
+            @apply mb-12 md:mb-16 border-b border-[#111111] pb-8; /* 头部下边距，底部边框 */
+        }
+        header h1 {
+            @apply text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-[#111111]; /* 大写、特粗、紧凑字间距 */
+        }
+        main {
+            @apply w-full;
+        }
+        .content-grid {
+            @apply grid grid-cols-12 gap-x-8 gap-y-12 md:gap-y-16; /* 12列网格，定义间隙 */
+        }
+        .grid-item {
+            @apply col-span-12; /* 默认占满，具体可调整 */
+        }
+        .grid-item-title {
+            @apply text-2xl md:text-3xl font-bold uppercase tracking-tight text-[#111111] mb-6; /* 日期/地点标题 */
+        }
+        .grid-item-subtitle {
+            @apply text-lg md:text-xl font-bold text-[#111111] mt-6 mb-3; /* 美食/景点等副标题 */
+            /* 可以考虑左侧加一个红色装饰条 */
+            /* @apply relative pl-4 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-red-600; */
+        }
+        .grid-item-text {
+            @apply text-sm md:text-base text-neutral-800 mb-2;
+        }
+        .grid-item-text strong {
+            @apply font-semibold text-[#111111];
+        }
+        .tag {
+            @apply inline-block bg-[#FF0000] text-white text-xs font-bold uppercase px-3 py-1 tracking-wider; /* 标签样式，无圆角 */
+        }
+        footer {
+            @apply text-left mt-16 md:mt-24 pt-8 border-t border-[#111111] text-xs text-neutral-600;
+        }
+
+        /* 不对称布局示例：让某些块占据不同列数 */
+        .day-block-large { @apply md:col-span-7 lg:col-span-8; }
+        .day-block-medium { @apply md:col-span-5 lg:col-span-4; }
+        .day-block-text { @apply md:col-span-12; } /* 用于纯文本描述块 */
+
+        /* 简单的几何视觉元素 (可选) */
+        .visual-element {
+            @apply w-8 h-1 bg-[#111111] my-4; /* 简单的黑色线条 */
+        }
+        .visual-element-red {
+            @apply w-8 h-1 bg-[#FF0000] my-4; /* 简单的红色线条 */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="swiss-container">
+        <header>
+            <h1>新疆15日深度环线</h1>
+        </header>
+
+        <main>
+            <div class="content-grid">
+                <!-- Day 1 & 2: 乌鲁木齐 -->
+                <div class="grid-item day-block-large">
+                    <h2 class="grid-item-title">Day 1 & 2: 乌鲁木齐</h2>
+                    
+                    <div>
+                        <h3 class="grid-item-subtitle">美食推荐</h3>
+                        <p class="grid-item-text"><strong>特色菜品:</strong> 抓饭、烤羊肉串、大盘鸡、烤包子、馕、拉条子（拌面）、羊杂汤。</p>
+                        <p class="grid-item-text"><strong>推荐餐厅/区域:</strong> 国际大巴扎美食街：各类新疆小吃。幸福路美食街：沙湾大盘鸡等。魏家羊羔肉、胖老汉新疆特色椒麻鸡、阔希玛克拉烤包子。当地人推荐的丸子汤、风干肉抓饭馆。</p>
+                        <p class="grid-item-text"><strong>特色饮品/小食:</strong> 胡萝卜汁、巴旦木饮料、新疆酸奶（如天润）。</p>
+                    </div>
+                    <div class="visual-element"></div>
+                    <div>
+                        <h3 class="grid-item-subtitle">热门景点/玩乐项目 (适合家庭)</h3>
+                        <p class="grid-item-text"><strong>天山天池风景区:</strong> 高山湖泊，可乘船游湖，欣赏博格达峰雪山风光。（Day 2 重点）</p>
+                        <p class="grid-item-text"><strong>新疆维吾尔自治区博物馆:</strong> 了解新疆历史文化，观看干尸展览（需注意是否适合孩子）。</p>
+                        <p class="grid-item-text"><strong>国际大巴扎:</strong> 体验西域风情，购买纪念品，品尝小吃（注意看管好孩子和财物）。</p>
+                        <p class="grid-item-text"><strong>红山公园:</strong> 市区制高点，可俯瞰乌市全景。</p>
+                        <p class="grid-item-text"><strong>水磨沟公园:</strong> 风景优美，适合休闲散步。</p>
+                    </div>
+                </div>
+
+                <!-- Day 3: 布尔津县 -->
+                <div class="grid-item day-block-medium">
+                    <h2 class="grid-item-title">Day 3: 布尔津县 <span class="tag">途经五彩滩</span></h2>
+                    <div>
+                        <h3 class="grid-item-subtitle">美食推荐</h3>
+                        <p class="grid-item-text"><strong>特色菜品:</strong> 额尔齐斯河冷水鱼（烤鱼、炖鱼）、烤羊肉串、俄罗斯风味小吃。</p>
+                        <p class="grid-item-text"><strong>推荐餐厅/区域:</strong> 布尔津美食街（夜市）。</p>
+                    </div>
+                    <div class="visual-element-red"></div>
+                    <div>
+                        <h3 class="grid-item-subtitle">热门景点/玩乐项目</h3>
+                        <p class="grid-item-text"><strong>五彩滩:</strong> 雅丹地貌,额尔齐斯河穿流而过,日落时分色彩斑斓。</p>
+                        <p class="grid-item-text"><strong>额尔齐斯河:</strong> 河边散步。</p>
+                        <p class="grid-item-text"><strong>中俄老码头风情街:</strong> 了解当地历史文化。</p>
+                    </div>
+                </div>
+
+                <!-- Day 4 & 5: 喀纳斯 -->
+                <div class="grid-item day-block-large md:col-start-1"> <!-- 另起一行开始，并占据较大空间 -->
+                    <h2 class="grid-item-title">Day 4 & 5: 喀纳斯国家地质公园</h2>
+                    <div>
+                        <h3 class="grid-item-subtitle">美食推荐</h3>
+                        <p class="grid-item-text"><strong>特色菜品:</strong> 图瓦特色美食（奶茶、奶疙瘩、包尔萨克、手抓肉、风干肉）、喀纳斯湖冷水鱼、野菜。</p>
+                        <p class="grid-item-text"><strong>推荐餐厅/区域:</strong> 景区内贾登峪生活区或喀纳斯新村有餐厅。</p>
+                    </div>
+                    <div class="visual-element"></div>
+                    <div>
+                        <h3 class="grid-item-subtitle">热门景点/玩乐项目</h3>
+                        <p class="grid-item-text"><strong>喀纳斯湖:</strong> 核心景点,可乘船游湖。</p>
+                        <p class="grid-item-text"><strong>“三湾” (神仙湾、月亮湾、卧龙湾):</strong> 经典徒步或乘区间车游览路段。</p>
+                        <p class="grid-item-text"><strong>观鱼台:</strong> 登顶可俯瞰喀纳斯湖全景。</p>
+                        <p class="grid-item-text"><strong>图瓦村落 (喀纳斯新村/老村):</strong> 体验图瓦民俗风情。</p>
+                        <p class="grid-item-text"><strong>白哈巴村 (若允许):</strong> “西北第一村”。</p>
+                    </div>
+                </div>
+                
+                <!-- Day 6: 禾木村 -->
+                <div class="grid-item day-block-medium md:col-start-8"> <!-- 尝试不对称，接在喀纳斯旁边或根据流式布局自动换行 -->
+                     <h2 class="grid-item-title">Day 6: 禾木村</h2>
+                     <div>
+                         <h3 class="grid-item-subtitle">美食推荐</h3>
+                         <p class="grid-item-text"><strong>特色菜品:</strong> 图瓦家常菜、烤羊肉、马奶酒、蓝莓酱。</p>
+                         <p class="grid-item-text"><strong>推荐餐厅/区域:</strong> 禾木村内民宿和餐厅。</p>
+                     </div>
+                     <div class="visual-element-red"></div>
+                     <div>
+                         <h3 class="grid-item-subtitle">热门景点/玩乐项目</h3>
+                         <p class="grid-item-text"><strong>禾木观景平台:</strong> 拍摄全景、晨雾、日出、星空。</p>
+                         <p class="grid-item-text"><strong>禾木桥 & 白桦林。</strong></p>
+                         <p class="grid-item-text"><strong>图瓦人家访 & 骑马。</strong></p>
+                     </div>
+                </div>
+
+                <!-- Day 7: 乌尔禾魔鬼城 -->
+                <div class="grid-item day-block-text md:col-span-12"> <!-- 占满整行用于较短描述 -->
+                    <h2 class="grid-item-title">Day 7: 乌尔禾魔鬼城 (克拉玛依市)</h2>
+                    <div>
+                        <h3 class="grid-item-subtitle">美食推荐</h3>
+                        <p class="grid-item-text"><strong>特色菜品:</strong> 新疆家常菜、烤肉。 <strong>推荐餐厅/区域:</strong> 乌尔禾镇上或克拉玛依市区。</p>
+                    </div>
+                    <div>
+                        <h3 class="grid-item-subtitle">热门景点/玩乐项目</h3>
+                        <p class="grid-item-text"><strong>世界魔鬼城 (乌尔禾风城):</strong> 雅丹地貌,小火车游览,日落光影佳。</p>
+                        <p class="grid-item-text"><strong>艾里克湖 & 克拉玛依油田。</strong></p>
+                    </div>
+                </div>
+
+                <!-- Day 8 & 9: 赛里木湖 -->
+                <div class="grid-item day-block-large">
+                    <h2 class="grid-item-title">Day 8 & 9: 赛里木湖</h2>
+                    <div>
+                        <h3 class="grid-item-subtitle">美食推荐</h3>
+                        <p class="grid-item-text"><strong>特色菜品:</strong> 高白鲑（赛里木湖特产）、羊肉、奶制品、野菜。</p>
+                        <p class="grid-item-text"><strong>推荐餐厅/区域:</strong> 景区门口或湖边餐厅/蒙古包。</p>
+                    </div>
+                    <div class="visual-element"></div>
+                    <div>
+                        <h3 class="grid-item-subtitle">热门景点/玩乐项目</h3>
+                        <p class="grid-item-text"><strong>环湖游:</strong> 核心体验,多个观景点。</p>
+                        <p class="grid-item-text"><strong>草原鲜花 (夏季) & 天鹅水鸟 (特定季节)。</strong></p>
+                        <p class="grid-item-text"><strong>星空观赏 & 骑马/徒步。</strong></p>
+                    </div>
+                </div>
+
+                <!-- Day 10 & 11: 那拉提草原 -->
+                 <div class="grid-item day-block-medium">
+                    <h2 class="grid-item-title">Day 10 & 11: 那拉提草原</h2>
+                    <div>
+                        <h3 class="grid-item-subtitle">美食推荐</h3>
+                        <p class="grid-item-text"><strong>特色菜品:</strong> 哈萨克族美食（手抓肉、纳仁、马肠子、马奶酒）、烤全羊。</p>
+                        <p class="grid-item-text"><strong>推荐餐厅/区域:</strong> 那拉提镇上或景区内餐饮点。</p>
+                    </div>
+                    <div class="visual-element-red"></div>
+                    <div>
+                        <h3 class="grid-item-subtitle">热门景点/玩乐项目</h3>
+                        <p class="grid-item-text"><strong>空中草原 & 河谷草原:</strong> 核心景区。</p>
+                        <p class="grid-item-text"><strong>盘龙谷道 & 哈萨克民俗体验。</strong></p>
+                        <p class="grid-item-text"><strong>骑马 & 沃尔塔交塔。</strong></p>
+                    </div>
+                </div>
+
+                <!-- Day 12: 巴音布鲁克草原 -->
+                <div class="grid-item day-block-text md:col-span-6 md:col-start-1">
+                    <h2 class="grid-item-title">Day 12: 巴音布鲁克草原</h2>
+                    <div>
+                        <h3 class="grid-item-subtitle">美食推荐</h3>
+                        <p class="grid-item-text"><strong>特色菜品:</strong> 蒙古族美食（手把肉、烤羊排）、黑头羊。</p>
+                        <p class="grid-item-text"><strong>推荐餐厅/区域:</strong> 巴音布鲁克镇。</p>
+                    </div>
+                    <div>
+                        <h3 class="grid-item-subtitle">热门景点/玩乐项目</h3>
+                        <p class="grid-item-text"><strong>九曲十八弯:</strong> 著名日落观赏点。</p>
+                        <p class="grid-item-text"><strong>天鹅湖自然保护区。</strong></p>
+                        <p class="grid-item-text"><strong>巴西里克观景台 & 草原骑马/摩托车。</strong></p>
+                    </div>
+                </div>
+
+                <!-- Day 13 & 14: 库车 -->
+                <div class="grid-item day-block-text md:col-span-6">
+                    <h2 class="grid-item-title">Day 13 & 14: 库车</h2>
+                    <div>
+                        <h3 class="grid-item-subtitle">美食推荐</h3>
+                        <p class="grid-item-text"><strong>特色菜品:</strong> 库车大馕、库车汤面、烤肉、薄皮包子。</p>
+                        <p class="grid-item-text"><strong>推荐餐厅/区域:</strong> 库车老城（热斯坦历史文化街区）、太古里夜市。</p>
+                    </div>
+                    <div class="visual-element"></div>
+                    <div>
+                        <h3 class="grid-item-subtitle">热门景点/玩乐项目</h3>
+                        <p class="grid-item-text"><strong>天山神秘大峡谷 & 克孜尔千佛洞。</strong></p>
+                        <p class="grid-item-text"><strong>库车王府 & 库车大寺。</strong></p>
+                        <p class="grid-item-text"><strong>苏巴什佛寺遗址 & 库车老城。</strong></p>
+                    </div>
+                </div>
+                
+                <!-- Day 15: 返程 -->
+                <div class="grid-item day-block-text md:col-span-12">
+                    <h2 class="grid-item-title">Day 15: 库车 — 乌鲁木齐 (飞机) — 返程</h2>
+                    <p class="grid-item-text">根据航班时间,可在库车市区购买一些当地特产,如库车小白杏干、药茶等。</p>
+                    <div class="visual-element-red mt-6"></div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> 新疆环线旅行计划。瑞士风格版面设计。信息层级与功能美学。</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粗野主义 - 风格展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Courier+New&display=swap" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/motion@latest/+esm"></script>
+    <style type="text/tailwindcss">
+        body {
+            @apply bg-[#FFFF00] text-[#000000] font-mono; /* 亮黄背景，黑色文字，等宽字体 */
+            font-family: 'Source Code Pro', 'Courier New', monospace;
+        }
+        .brutalist-container {
+            @apply min-h-screen flex flex-col p-4 sm:p-8;
+        }
+        header {
+            @apply mb-8 py-4 border-b-4 border-black;
+        }
+        header h1 {
+            @apply text-3xl sm:text-5xl font-bold uppercase text-center tracking-wider;
+        }
+        main {
+            @apply flex-grow border-4 border-black p-4 sm:p-6;
+        }
+        .content-section {
+            @apply mb-6;
+        }
+        .content-section h2 {
+            @apply text-2xl sm:text-3xl font-bold mb-3 border-b-2 border-black pb-2;
+        }
+        .content-section p, .content-section ul {
+            @apply mb-3 text-sm sm:text-base leading-relaxed;
+        }
+        .content-section li {
+            @apply ml-5 list-disc;
+        }
+        .tag {
+            @apply inline-block bg-black text-yellow-300 px-2 py-1 text-xs font-bold uppercase rounded-none;
+        }
+        .button-brutal {
+            @apply bg-black text-yellow-300 border-2 border-black px-4 py-2 font-bold uppercase tracking-wider hover:bg-yellow-300 hover:text-black transition-colors duration-150;
+            /* 无圆角已通过 tailwindcss 默认或 reset 实现 */
+        }
+        footer {
+            @apply mt-8 pt-4 border-t-4 border-black text-center text-xs sm:text-sm;
+        }
+        /* 原始HTML感 - 减少修饰 */
+        a {
+            @apply text-black underline hover:text-gray-700;
+        }
+        /* 谨慎使用的动效示例 - 可移除 */
+        .animated-box {
+            @apply w-16 h-16 bg-black my-4;
+        }
+    </style>
+</head>
+<body class="brutalist-container">
+    <header>
+        <h1>粗野主义风格</h1>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <h2>风格定义</h2>
+            <p>追求原始的HTML感，通过鲜明对比、单调字体、无修饰的元素，展现大胆、实验性甚至反主流的设计态度。</p>
+            <p class="text-xs italic">
+                Eng Keywords: raw HTML feel, stark contrast, monospaced fonts, unadorned, bold, experimental, anti-establishment.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>核心特征</h2>
+            <ul>
+                <li><span class="tag">字体</span> 主要应用 'Source Code Pro', 'Courier New', monospace。</li>
+                <li><span class="tag">颜色</span> 使用高对比度颜色。例如，亮黄色背景 (#FFFF00) 配黑色文字 (#000000)。避免柔和的颜色过渡和复杂的调色板。</li>
+                <li><span class="tag">边框</span> 元素（如卡片、按钮）可以有粗犷的、实色的边框 (例如 border: 3px solid #000000;)。</li>
+                <li><span class="tag">元素</span> 标签可以是简单的黑色背景、亮色文字，无圆角。避免圆角、平滑的阴影等修饰性效果。元素应显得直接、未加修饰。</li>
+                <li><span class="tag">布局</span> 布局可以简单直接，甚至略显“粗糙”。网格系统可以用于基本对齐，但不需要追求像素完美或复杂的布局结构。</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>内容示例 (原新疆游记部分简化)</h2>
+            <div class="border-2 border-black p-3 mb-4">
+                <h3 class="font-bold text-lg mb-1">乌鲁木齐探索</h3>
+                <p>美食推荐: 抓饭、烤羊肉串、大盘鸡。国际大巴扎美食街是体验当地小吃的好去处。</p>
+                <p>景点: 天山天池风景区，欣赏高山湖泊；新疆维吾尔自治区博物馆，了解历史文化。</p>
+            </div>
+            <div class="border-2 border-black p-3">
+                <h3 class="font-bold text-lg mb-1">喀纳斯之旅</h3>
+                <p>美食推荐: 图瓦特色美食，喀纳斯湖冷水鱼。</p>
+                <p>景点: 喀纳斯湖核心区，观鱼台俯瞰全景，“三湾” (神仙湾、月亮湾、卧龙湾)徒步。</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>交互元素示例</h2>
+            <button class="button-brutal" id="brutalButton">一个粗野的按钮</button>
+            <div id="feedback" class="mt-2 text-sm font-bold"></div>
+        </section>
+        
+        <!-- 可选的 Motion.js 动效示例 -->
+        <!-- <div class="animated-box" id="motionBox"></div> -->
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 粗野主义设计演示. 无版权，随便用.</p>
+    </footer>
+
+    <script type="module">
+        import { animate } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm"
+
+        // 可选的按钮交互
+        const brutalButton = document.getElementById('brutalButton');
+        const feedback = document.getElementById('feedback');
+        if (brutalButton && feedback) {
+            brutalButton.addEventListener('click', () => {
+                feedback.textContent = '按钮被点击了! 这很“原始”.';
+                animate(brutalButton, { scale: [1, 1.1, 1], opacity: [1, 0.8, 1] }, { duration: 0.3 });
+                setTimeout(() => {
+                    feedback.textContent = '';
+                }, 2000);
+            });
+        }
+
+        // 可选的Motion.js动效示例 - 如果取消注释HTML中的animated-box
+        // const motionBox = document.getElementById('motionBox');
+        // if (motionBox) {
+        //     animate(
+        //         motionBox,
+        //         { x: [0, 100, 0], rotate: [0, 15, 0] },
+        //         { duration: 2, repeat: Infinity, easing: "ease-in-out" }
+        //     );
+        // }
+    </script>
+
+</body>
+</html>

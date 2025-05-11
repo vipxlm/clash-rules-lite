@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站设计风格展示</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        :root {
+            --primary-color: #3a86ff;
+            --secondary-color: #8338ec;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .style-card {
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            background: white;
+            margin-bottom: 30px;
+        }
+        
+        .style-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .style-name {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .style-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .keyword {
+            display: inline-block;
+            background: rgba(131, 56, 236, 0.1);
+            color: var(--secondary-color);
+            border-radius: 20px;
+            padding: 0.3rem 0.8rem;
+            margin: 0.2rem;
+            font-size: 0.8rem;
+        }
+        
+        .filters {
+            margin: 2rem 0;
+        }
+        
+        .filter-btn {
+            margin: 0.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .style-card {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .card-header {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .search-box {
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 20px;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">网站设计风格集锦</h1>
+            <p class="lead">探索各种流行的网页设计风格、特点和关键元素</p>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+            <div>
+                <button class="btn btn-outline-primary" id="dark-mode-toggle">切换深色模式</button>
+            </div>
+            <div>
+                <input type="text" id="search-box" class="search-box" placeholder="搜索设计风格...">
+            </div>
+        </div>
+
+        <div class="row" id="style-cards">
+            <!-- 设计风格卡片将在这里动态添加 -->
+        </div>
+    </div>
+
+    <button id="back-to-top" class="btn btn-primary rounded-circle p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+        </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // 设计风格数据
+        const designStyles = [
+            {
+                name: "极简主义 (Minimalism)",
+                description: "极简主义强调设计中的"少即是多"理念，通过删除非必要元素，专注于内容和功能。其特点是大量留白、简洁界面和有限的色彩配置。",
+                keywords: ["留白", "简洁", "功能至上", "有限调色板", "清晰排版", "少即是多", "whitespace", "simplicity", "function-first", "limited color palette", "clean typography", "less is more"]
+            },
+            {
+                name: "扁平化设计 (Flat Design)",
+                description: "扁平化设计摒弃了拟物化设计中的阴影、渐变和纹理，专注于简洁、开放的空间、干净的边缘和鲜艳的颜色。它强调二维感，避免任何赋予深度错觉的风格特征。",
+                keywords: ["无阴影", "无渐变", "色块", "简约图标", "清晰排版", "二维界面", "no shadows", "no gradients", "solid colors", "simple icons", "clean typography", "2D interface"]
+            },
+            {
+                name: "质感设计 (Material Design by Google)",
+                description: "谷歌的质感设计是一种视觉语言，将经典设计原则与创新和技术相结合。它基于纸张和墨水的现实物理特性，实现了有层次感和灵活性的界面。",
+                keywords: ["物理隐喻", "卡片式布局", "Z轴深度", "有意义的动画", "响应式交互", "大胆图形", "material metaphor", "card-based layout", "z-depth", "meaningful animation", "responsive interaction", "bold graphics"]
+            },
+            {
+                name: "苹果设计风格 (Apple Design / Human Interface Guidelines)",
+                description: "苹果的设计哲学强调清晰、易用和深度。通过使用适度的模糊效果、微妙的渐变和精确的阴影，创造层次感和深度感，同时保持简约和优雅。",
+                keywords: ["清晰", "直观", "一致性", "深度感（适度模糊和阴影）", "优雅过渡", "以内容为中心", "clarity", "intuitive", "consistency", "depth (subtle blur & shadow)", "elegant transitions", "content-centric"]
+            },
+            {
+                name: "微软流畅设计 (Microsoft Fluent Design)",
+                description: "微软的流畅设计系统引入了多个设计元素，如光效、深度、动效、材质和缩放，旨在创建更为直观且沉浸式的用户体验，适用于各种设备和平台。",
+                keywords: ["光线", "深度", "动效", "材质", "缩放", "跨设备一致性", "light", "depth", "motion", "material", "scale", "cross-device consistency"]
+            },
+            {
+                name: "玻璃拟态 (Glassmorphism)",
+                description: "玻璃拟态是一种现代UI设计趋势，特点是半透明的背景模糊效果，创造出类似于磨砂玻璃的外观。它常与多层次设计结合，创造深度感和现代质感。",
+                keywords: ["背景模糊", "半透明", "细腻边框", "悬浮感", "层次感", "现代", "background blur", "translucency", "subtle borders", "floating feel", "layered", "modern"]
+            },
+            {
+                name: "新拟态 (Neumorphism)",
+                description: "新拟态是扁平化设计和拟物化设计的融合，通过微妙的阴影和高光创造出软塑料或挤压效果。它使元素看起来像是从背景中挤出或压入背景中。",
+                keywords: ["柔和阴影", "挤压/凸起效果", "单色背景", "简约界面", "触感错觉", "soft shadows", "extruded/pressed effect", "monochromatic background", "minimalist UI", "tactile illusion"]
+            },
+            {
+                name: "粗野主义 (Brutalism)",
+                description: "网页设计中的粗野主义通常表现为故意打破传统美学规则，使用未经修饰的HTML元素、非传统的布局、鲜明的对比色和实验性的导航结构，创造出原始且直接的用户体验。",
+                keywords: ["原始HTML感", "鲜明对比", "单调字体", "无修饰", "大胆", "实验性", "反主流", "raw HTML feel", "stark contrast", "monospaced fonts", "unadorned", "bold", "experimental", "anti-establishment"]
+            },
+            {
+                name: "便当网格 (Bento Grid / Bento UI)",
+                description: "便当网格设计灵感来自日本便当盒的分隔设计，将内容整齐地分割成不同大小和形状的模块。这种设计允许信息块以视觉上吸引人且组织有序的方式呈现。",
+                keywords: ["模块化布局", "信息块", "不对称网格", "视觉层级清晰", "内容组织", "高效展示", "modular layout", "information blocks", "asymmetrical grid", "clear visual hierarchy", "content organization", "efficient display"]
+            },
+            {
+                name: "现代风格 (Modern Web Design)",
+                description: "现代网页设计结合了多种当代设计趋势，通常包括简约的设计元素、响应式布局、大字体、足够的留白和优化的用户体验。它注重功能性和美观的平衡。",
+                keywords: ["简洁线条", "大图背景", "清晰排版", "响应式", "用户友好", "功能驱动", "clean lines", "large hero images", "clear typography", "responsive", "user-friendly", "function-driven"]
+            },
+            {
+                name: "复古/怀旧风格 (Retro/Vintage Web Design)",
+                description: "复古网页设计重新诠释过去时代的视觉元素，如20世纪中期的印刷广告、80年代的电子风格或90年代早期的网页美学。它使用复古字体、复古配色和怀旧纹理。",
+                keywords: ["旧时代元素", "复古字体", "纹理背景", "褪色效果", "特定时期配色（例如50s, 80s, Y2K）", "old-era elements", "retro fonts", "textured backgrounds", "faded effects", "period-specific color palettes"]
+            },
+            {
+                name: "手绘/插画风格 (Hand-drawn/Illustrated Web Design)",
+                description: "手绘网页设计融入了定制插图、手写字体和有机形状，为品牌带来人性化和独特性。这种风格与用户建立情感联系，常用于讲述品牌故事。",
+                keywords: ["个性化", "创意插图", "手写字体", "有机形状", "亲和力", "故事感", "personalization", "creative illustrations", "handwritten fonts", "organic shapes", "approachability", "storytelling"]
+            },
+            {
+                name: "暗黑模式 (Dark Mode/Theme)",
+                description: "暗黑模式使用深色背景和浅色前景内容，不仅在低光环境中减轻眼睛疲劳，还在OLED屏幕上节省电量。它创造出时尚、专业的外观，并强调内容和功能。",
+                keywords: ["深色背景", "高对比度文本", "节省能源（OLED）", "减轻眼疲劳", "现代感", "优雅", "dark background", "high-contrast text", "energy saving (OLED)", "reduced eye strain", "modern", "elegant"]
+            },
+            {
+                name: "瑞士风格/国际主义排版风格 (Swiss Style/International Typographic Style)",
+                description: "瑞士风格起源于20世纪50年代，强调清晰、客观的设计，使用网格系统、无衬线字体和不对称布局。它注重可读性、秩序和功能性美学。",
+                keywords: ["网格系统", "无衬线字体", "不对称布局", "客观清晰", "信息层级", "功能性美学", "grid system", "sans-serif typography", "asymmetrical layout", "objective clarity", "information hierarchy", "functional aesthetics"]
+            },
+            {
+                name: "大标题排版/英雄式排版 (Hero Typography/Bold Typography)",
+                description: "大标题排版设计以巨大、粗体的文字为主要设计元素，将文字本身作为视觉焦点。这种设计强调直接的信息传递，减少了对其他设计元素的依赖。",
+                keywords: ["巨型字体", "视觉冲击", "信息直达", "排版主导", "简约辅助", "个性化字体", "oversized fonts", "visual impact", "direct messaging", "typography-led", "minimalist support", "custom fonts"]
+            },
+            {
+                name: "单页网站/视差滚动 (Single Page Design / Parallax Scrolling)",
+                description: "单页网站将所有内容放在一个连续滚动的页面上，结合视差效果，创造出引人入胜的叙事体验。视差滚动让背景和前景以不同速度移动，增强深度感和交互性。",
+                keywords: ["线性叙事", "滚动交互", "动态效果", "故事性强", "移动优先", "简洁导航", "linear narrative", "scroll-based interaction", "dynamic effects", "strong storytelling", "mobile-first", "simple navigation"]
+            },
+            {
+                name: "孟菲斯设计 (Memphis Design)",
+                description: "孟菲斯设计风格源自1980年代的设计运动，以大胆的几何形状、明亮的色彩和不拘一格的图案为特征。在网页设计中，它打破常规，创造充满活力和玩味性的界面。",
+                keywords: ["大胆几何", "明亮撞色", "波点/条纹图案", "玩味性", "80年代复古", "打破常规", "bold geometrics", "bright color clashes", "polka dots/stripes", "playfulness", "80s retro", "rule-breaking"]
+            },
+            {
+                name: "3D 元素/插画 (3D Elements/Illustrations in Web)",
+                description: "3D设计元素在网页中创造深度和沉浸感，通过立体图形、产品展示和交互式3D模型增强用户体验。这种风格特别适合展示产品细节和创建独特视觉效果。",
+                keywords: ["立体感", "动态效果", "交互式3D", "沉浸体验", "产品展示", "科技感", "dimensionality", "dynamic effects", "interactive 3D", "immersive experience", "product showcase", "tech feel"]
+            },
+            {
+                name: "赛博朋克 (Cyberpunk Web Design)",
+                description: "赛博朋克网页设计受科幻和反乌托邦未来主义影响，特点是霓虹色彩、高对比度、故障艺术效果和暗色调。它传达高科技与低生活的对比，常见于科技和游戏网站。",
+                keywords: ["霓虹灯效", "暗色调", "未来科技感", "故障艺术", "代码元素", "反乌托邦", "neon effects", "dark tones", "futuristic tech", "glitch art", "code elements", "dystopian"]
+            },
+            {
+                name: "不对称布局 (Asymmetrical Layout)",
+                description: "不对称布局打破传统网格的均衡性，创造视觉上的动态平衡和引导用户注意力的流动路径。这种设计风格现代感强，可以创造出独特且令人难忘的用户体验。",
+                keywords: ["动态平衡", "视觉引导", "打破常规", "现代感", "创意自由", "层次感", "dynamic balance", "visual guidance", "breaking conventions", "modern feel", "creative freedom", "sense of depth"]
+            },
+            {
+                name: "照片驱动设计 (Photography-centric Design)",
+                description: "照片驱动设计以高质量图像为核心设计元素，通常使用全屏照片背景和最小化文本，让视觉内容讲述故事。这种设计在旅游、餐饮和时尚网站中尤为常见。",
+                keywords: ["高质量图片", "全屏背景", "视觉叙事", "情感连接", "简约文字", "图片优先", "high-quality imagery", "full-screen backgrounds", "visual storytelling", "emotional connection", "minimal text", "image-first"]
+            },
+            {
+                name: "奢侈/高端风格 (Luxury/High-end Web Design)",
+                description: "高端设计风格通过精致的排版、优雅的配色方案和精心挑选的视觉元素，传达品质和尊贵感。这种设计注重细节，常用于奢侈品牌、高端服务和精品产品网站。",
+                keywords: ["精致排版", "优雅配色", "高质量素材", "留白充足", "细节考究", "尊贵感", "refined typography", "elegant color palettes", "premium assets", "ample whitespace", "meticulous details", "sense of prestige"]
+            },
+            {
+                name: "抽象艺术风格 (Abstract Web Design)",
+                description: "抽象网页设计使用非具象图形、色彩情感和动态构图创造独特的视觉体验。它不受现实世界限制，可以表达复杂概念和情感，常见于创意行业和艺术相关网站。",
+                keywords: ["非具象图形", "色彩情感", "动态构图", "概念表达", "艺术氛围", "独特视觉", "non-representational graphics", "color emotion", "dynamic composition", "conceptual expression", "artistic vibe", "unique visuals"]
+            },
+            {
+                name: "拼贴风格 (Collage Style Web Design)",
+                description: "拼贴风格网页设计结合多种元素，如照片、插图、纹理和排版，创造层次丰富的视觉效果。这种风格具有手工制作的感觉，通常用于创意领域的网站。",
+                keywords: ["多元素组合", "纹理叠加", "复古感", "手作感", "不规则排版", "视觉丰富", "multi-element composition", "texture overlay", "vintage feel", "handmade touch", "irregular layout", "visually rich"]
+            },
+            {
+                name: "可持续/环保主题风格 (Eco-friendly/Sustainable Themed Web Design)",
+                description: "环保主题网页设计反映可持续发展理念，使用自然色调、有机纹理和环保图标。这种设计风格常见于绿色企业、环保组织和有社会责任感的品牌网站。",
+                keywords: ["自然色系", "有机纹理", "环保图标", "清晰信息", "使命感", "绿色设计", "natural color palettes", "organic textures", "eco-icons", "clear messaging", "mission-driven", "green design"]
+            }
+        ];
+
+        // DOM 元素
+        const styleCardsContainer = document.getElementById('style-cards');
+        const searchBox = document.getElementById('search-box');
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const backToTopButton = document.getElementById('back-to-top');
+
+        // 渲染设计风格卡片
+        function renderCards(styles) {
+            styleCardsContainer.innerHTML = '';
+            
+            styles.forEach((style, index) => {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'col-lg-4 col-md-6 mb-4';
+                cardDiv.setAttribute('data-aos', 'fade-up');
+                cardDiv.setAttribute('data-aos-delay', (index % 3) * 100);
+                
+                const keywords = style.keywords.map(keyword => 
+                    `<span class="keyword">${keyword}</span>`
+                ).join('');
+                
+                cardDiv.innerHTML = `
+                    <div class="style-card">
+                        <div class="card-header">
+                            <h2 class="style-name">${style.name}</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>${style.description}</p>
+                            <div class="style-keywords">
+                                ${keywords}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                styleCardsContainer.appendChild(cardDiv);
+            });
+        }
+
+        // 搜索功能
+        function filterStyles(query) {
+            if (!query) {
+                return designStyles;
+            }
+            
+            query = query.toLowerCase();
+            return designStyles.filter(style => {
+                return style.name.toLowerCase().includes(query) || 
+                       style.description.toLowerCase().includes(query) || 
+                       style.keywords.some(keyword => keyword.toLowerCase().includes(query));
+            });
+        }
+
+        // 初始化
+        function init() {
+            renderCards(designStyles);
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // 搜索功能
+            searchBox.addEventListener('input', function() {
+                const filteredStyles = filterStyles(this.value);
+                renderCards(filteredStyles);
+                AOS.refresh();
+            });
+            
+            // 深色模式切换
+            darkModeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                if (document.body.classList.contains('dark-mode')) {
+                    this.textContent = '切换浅色模式';
+                } else {
+                    this.textContent = '切换深色模式';
+                }
+            });
+            
+            // 回到顶部按钮
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html> 

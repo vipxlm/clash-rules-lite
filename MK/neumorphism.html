@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新拟态风格 - 新疆15日游</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --neumorphic-bg: #e0e5ec;
+            --neumorphic-text-primary: #3E4A56; /* For headings, strong text */
+            --neumorphic-text-secondary: #5B6A7A; /* For body text */
+            --neumorphic-shadow-dark: #b8bec7;
+            --neumorphic-shadow-light: #ffffff;
+            --neumorphic-radius-sm: 8px;
+            --neumorphic-radius-md: 12px;
+            --neumorphic-radius-lg: 16px;
+        }
+
+        body {
+            background-color: var(--neumorphic-bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--neumorphic-text-secondary);
+            margin: 0;
+        }
+
+        .neumorphic-raised-sm { box-shadow: 3px 3px 6px var(--neumorphic-shadow-dark), -3px -3px 6px var(--neumorphic-shadow-light); }
+        .neumorphic-pressed-sm { box-shadow: inset 3px 3px 6px var(--neumorphic-shadow-dark), inset -3px -3px 6px var(--neumorphic-shadow-light); }
+        .neumorphic-raised-md { box-shadow: 6px 6px 12px var(--neumorphic-shadow-dark), -6px -6px 12px var(--neumorphic-shadow-light); }
+        .neumorphic-pressed-md { box-shadow: inset 6px 6px 12px var(--neumorphic-shadow-dark), inset -6px -6px 12px var(--neumorphic-shadow-light); }
+        .neumorphic-flat { box-shadow: 2px 2px 4px var(--neumorphic-shadow-dark), -2px -2px 4px var(--neumorphic-shadow-light); } /* Subtle raise for less prominent elements */
+
+        .neumorphic-interactive { 
+            transition: box-shadow 0.15s ease-in-out, transform 0.1s ease-in-out; 
+        }
+        .neumorphic-interactive:active {
+            transform: translateY(1px);
+        }
+        .list-icon {
+            flex-shrink: 0;
+            width: 1.25em; /* Ensure icons align well */
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neumorphic-bg': 'var(--neumorphic-bg)',
+                        'neumorphic-primary': 'var(--neumorphic-text-primary)',
+                        'neumorphic-secondary': 'var(--neumorphic-text-secondary)',
+                        'shadow-dark': 'var(--neumorphic-shadow-dark)',
+                        'shadow-light': 'var(--neumorphic-shadow-light)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'neumorphic-sm': 'var(--neumorphic-radius-sm)',
+                        'neumorphic-md': 'var(--neumorphic-radius-md)',
+                        'neumorphic-lg': 'var(--neumorphic-radius-lg)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+
+    <header class="text-center mb-10 sm:mb-12 w-full max-w-3xl">
+        <div class="bg-neumorphic-bg rounded-neumorphic-lg p-6 sm:p-8 neumorphic-raised-md">
+            <h1 class="text-3xl sm:text-4xl font-bold text-neumorphic-primary mb-3">新拟态风格</h1>
+            <p class="text-neumorphic-secondary text-base sm:text-lg mb-4">
+                利用柔和的内外阴影，在单色背景上模拟出元素被挤压或凸起的效果，营造简约界面下的触感错觉。
+            </p>
+            <div class="text-xs sm:text-sm text-neumorphic-secondary/80">
+                关键词: <span class="font-semibold">soft shadows</span>, <span class="font-semibold">extruded/pressed effect</span>, <span class="font-semibold">monochromatic background</span>, <span class="font-semibold">minimalist UI</span>, <span class="font-semibold">tactile illusion</span>.
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full max-w-7xl">
+        <h2 class="text-2xl sm:text-3xl font-bold text-neumorphic-primary mb-8 text-center neumorphic-flat bg-neumorphic-bg rounded-neumorphic-md p-4">新疆15日深度环线</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+            
+            <!-- Day 1 & 2: 乌鲁木齐 -->
+            <div class="neumorphic-card bg-neumorphic-bg rounded-neumorphic-lg p-5 sm:p-6 neumorphic-raised-md">
+                <h3 class="text-xl sm:text-2xl font-bold text-neumorphic-primary mb-4 flex items-center">
+                    <i class="fas fa-map-signs fa-fw mr-3 text-neumorphic-primary/80 list-icon"></i>Day 1 & 2: 乌鲁木齐
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-utensils fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>美食推荐
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>抓饭、烤羊肉串、大盘鸡、烤包子、馕、拉条子（拌面）、羊杂汤。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>国际大巴扎美食街：各类新疆小吃。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>幸福路美食街：沙湾大盘鸡等。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>魏家羊羔肉、胖老汉新疆特色椒麻鸡、阔希玛克拉烤包子。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>当地人推荐的丸子汤、风干肉抓饭馆。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>特色饮品/小食: 胡萝卜汁、巴旦木饮料、新疆酸奶（如天润）。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-hiking fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>热门景点/玩乐项目
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>天山天池风景区: 高山湖泊，可乘船游湖，欣赏博格达峰雪山风光。（Day 2 重点）</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>新疆维吾尔自治区博物馆: 了解新疆历史文化，观看干尸展览。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>国际大巴扎: 体验西域风情，购买纪念品，品尝小吃。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>红山公园: 市区制高点，可俯瞰乌市全景。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>水磨沟公园: 风景优美，适合休闲散步。</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="interactive-button w-full mt-6 py-2.5 sm:py-3 px-4 bg-neumorphic-bg rounded-neumorphic-md neumorphic-interactive neumorphic-raised-sm text-neumorphic-primary font-semibold hover:text-opacity-80">
+                    <i class="fas fa-info-circle mr-2"></i>查看详情
+                </button>
+            </div>
+
+            <!-- Day 3: 布尔津县 -->
+            <div class="neumorphic-card bg-neumorphic-bg rounded-neumorphic-lg p-5 sm:p-6 neumorphic-raised-md">
+                <h3 class="text-xl sm:text-2xl font-bold text-neumorphic-primary mb-4 flex items-center">
+                    <i class="fas fa-map-marker-alt fa-fw mr-3 text-neumorphic-primary/80 list-icon"></i>Day 3: 布尔津县
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-fish fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>美食推荐
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>额尔齐斯河冷水鱼（烤鱼、炖鱼）、烤羊肉串、俄罗斯风味小吃。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>布尔津美食街（夜市）：品尝烤鱼和当地小吃。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-mountain fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>热门景点/玩乐项目
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>五彩滩: 雅丹地貌，额尔齐斯河穿流而过，日落时分色彩斑斓。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>额尔齐斯河: 河边散步，感受宁静。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>中俄老码头风情街: 了解当地历史文化。</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="interactive-button w-full mt-6 py-2.5 sm:py-3 px-4 bg-neumorphic-bg rounded-neumorphic-md neumorphic-interactive neumorphic-raised-sm text-neumorphic-primary font-semibold hover:text-opacity-80">
+                    <i class="fas fa-info-circle mr-2"></i>查看详情
+                </button>
+            </div>
+
+            <!-- Day 4 & 5: 喀纳斯 -->
+            <div class="neumorphic-card bg-neumorphic-bg rounded-neumorphic-lg p-5 sm:p-6 neumorphic-raised-md">
+                <h3 class="text-xl sm:text-2xl font-bold text-neumorphic-primary mb-4 flex items-center">
+                    <i class="fas fa-water fa-fw mr-3 text-neumorphic-primary/80 list-icon"></i>Day 4 & 5: 喀纳斯
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-drumstick-bite fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>美食推荐
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>图瓦特色美食（奶茶、奶疙瘩、包尔萨克、手抓肉）、喀纳斯湖冷水鱼。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>景区内贾登峪生活区或喀纳斯新村有餐厅。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-binoculars fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>热门景点/玩乐项目
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>喀纳斯湖: 核心景点，可乘船游湖。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>“三湾” (神仙湾、月亮湾、卧龙湾): 经典徒步或乘区间车游览。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>观鱼台: 登顶可俯瞰喀纳斯湖全景。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>图瓦村落 (喀纳斯新村/老村): 体验图瓦民俗。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>白哈巴村 (若允许): “西北第一村”。</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="interactive-button w-full mt-6 py-2.5 sm:py-3 px-4 bg-neumorphic-bg rounded-neumorphic-md neumorphic-interactive neumorphic-raised-sm text-neumorphic-primary font-semibold hover:text-opacity-80">
+                    <i class="fas fa-info-circle mr-2"></i>查看详情
+                </button>
+            </div>
+
+            <!-- Day 6: 禾木村 -->
+            <div class="neumorphic-card bg-neumorphic-bg rounded-neumorphic-lg p-5 sm:p-6 neumorphic-raised-md">
+                <h3 class="text-xl sm:text-2xl font-bold text-neumorphic-primary mb-4 flex items-center">
+                    <i class="fas fa-home fa-fw mr-3 text-neumorphic-primary/80 list-icon"></i>Day 6: 禾木村
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-concierge-bell fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>美食推荐
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>图瓦家常菜、烤羊肉、马奶酒、蓝莓酱。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>禾木村内有许多民宿和餐厅。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-camera-retro fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>热门景点/玩乐项目
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>禾木观景平台: 拍摄全景、晨雾、日出、星空。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>禾木桥: 标志性建筑。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>白桦林: 秋季金黄，适合散步。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>图瓦人家访: 体验民俗。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>骑马: 草原体验（注意安全）。</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="interactive-button w-full mt-6 py-2.5 sm:py-3 px-4 bg-neumorphic-bg rounded-neumorphic-md neumorphic-interactive neumorphic-raised-sm text-neumorphic-primary font-semibold hover:text-opacity-80">
+                    <i class="fas fa-info-circle mr-2"></i>查看详情
+                </button>
+            </div>
+
+            <!-- Day 7: 乌尔禾魔鬼城 -->
+            <div class="neumorphic-card bg-neumorphic-bg rounded-neumorphic-lg p-5 sm:p-6 neumorphic-raised-md">
+                <h3 class="text-xl sm:text-2xl font-bold text-neumorphic-primary mb-4 flex items-center">
+                    <i class="fas fa-ghost fa-fw mr-3 text-neumorphic-primary/80 list-icon"></i>Day 7: 乌尔禾魔鬼城
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-utensils fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>美食推荐
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>新疆家常菜（大盘鸡、拌面等）、烤肉。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>乌尔禾镇上或克拉玛依市区有餐厅。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-wind fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>热门景点/玩乐项目
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>世界魔鬼城 (乌尔禾风城): 雅丹地貌，乘小火车游览。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>艾里克湖: 沙漠湖泊。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>克拉玛依油田: 石油工业文化。</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="interactive-button w-full mt-6 py-2.5 sm:py-3 px-4 bg-neumorphic-bg rounded-neumorphic-md neumorphic-interactive neumorphic-raised-sm text-neumorphic-primary font-semibold hover:text-opacity-80">
+                    <i class="fas fa-info-circle mr-2"></i>查看详情
+                </button>
+            </div>
+
+            <!-- Day 8 & 9: 赛里木湖 -->
+            <div class="neumorphic-card bg-neumorphic-bg rounded-neumorphic-lg p-5 sm:p-6 neumorphic-raised-md">
+                <h3 class="text-xl sm:text-2xl font-bold text-neumorphic-primary mb-4 flex items-center">
+                    <i class="fas fa-water fa-fw mr-3 text-neumorphic-primary/80 list-icon"></i>Day 8 & 9: 赛里木湖
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-cheese fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>美食推荐
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>高白鲑（赛里木湖特产）、羊肉、奶制品、野菜。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>景区门口或湖边有餐厅和蒙古包。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-route fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>热门景点/玩乐项目
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>环湖游: 核心体验，沿途有多个观景点。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>草原鲜花: 夏季湖边野花盛开。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>天鹅及水鸟: 特定季节可见。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>星空: 光污染少，适合观星。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>骑马/徒步: 湖边草原体验。</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="interactive-button w-full mt-6 py-2.5 sm:py-3 px-4 bg-neumorphic-bg rounded-neumorphic-md neumorphic-interactive neumorphic-raised-sm text-neumorphic-primary font-semibold hover:text-opacity-80">
+                    <i class="fas fa-info-circle mr-2"></i>查看详情
+                </button>
+            </div>
+            
+            <!-- Day 10 & 11: 那拉提草原 -->
+            <div class="neumorphic-card bg-neumorphic-bg rounded-neumorphic-lg p-5 sm:p-6 neumorphic-raised-md">
+                <h3 class="text-xl sm:text-2xl font-bold text-neumorphic-primary mb-4 flex items-center">
+                    <i class="fas fa-horse-head fa-fw mr-3 text-neumorphic-primary/80 list-icon"></i>Day 10 & 11: 那拉提草原
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-drumstick-bite fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>美食推荐
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>哈萨克族美食（手抓肉、纳仁、马肠子、马奶酒）、烤全羊、草原蘑菇。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>那拉提镇上有很多餐厅。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-tree fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>热门景点/玩乐项目
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>空中草原: 核心景区，视野开阔。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>河谷草原: 巩乃斯河流过，景色秀美。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>盘龙谷道: 森林草原景观。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>哈萨克民俗体验: 参观毡房，了解文化。</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="interactive-button w-full mt-6 py-2.5 sm:py-3 px-4 bg-neumorphic-bg rounded-neumorphic-md neumorphic-interactive neumorphic-raised-sm text-neumorphic-primary font-semibold hover:text-opacity-80">
+                    <i class="fas fa-info-circle mr-2"></i>查看详情
+                </button>
+            </div>
+
+            <!-- Day 12: 巴音布鲁克草原 -->
+            <div class="neumorphic-card bg-neumorphic-bg rounded-neumorphic-lg p-5 sm:p-6 neumorphic-raised-md">
+                <h3 class="text-xl sm:text-2xl font-bold text-neumorphic-primary mb-4 flex items-center">
+                    <i class="fas fa-cloud-sun fa-fw mr-3 text-neumorphic-primary/80 list-icon"></i>Day 12: 巴音布鲁克草原
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-utensils fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>美食推荐
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>蒙古族美食（手把肉、烤羊排、奶皮子）、黑头羊。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>巴音布鲁克镇上有餐厅。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-crow fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>热门景点/玩乐项目
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>九曲十八弯: 著名日落观赏点。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>天鹅湖自然保护区: 中国最大的天鹅繁殖地。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>巴西里克观景台: 俯瞰草原和湿地。</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="interactive-button w-full mt-6 py-2.5 sm:py-3 px-4 bg-neumorphic-bg rounded-neumorphic-md neumorphic-interactive neumorphic-raised-sm text-neumorphic-primary font-semibold hover:text-opacity-80">
+                    <i class="fas fa-info-circle mr-2"></i>查看详情
+                </button>
+            </div>
+
+            <!-- Day 13 & 14: 库车 -->
+            <div class="neumorphic-card bg-neumorphic-bg rounded-neumorphic-lg p-5 sm:p-6 neumorphic-raised-md">
+                <h3 class="text-xl sm:text-2xl font-bold text-neumorphic-primary mb-4 flex items-center">
+                    <i class="fas fa-archway fa-fw mr-3 text-neumorphic-primary/80 list-icon"></i>Day 13 & 14: 库车
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-bread-slice fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>美食推荐
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>库车大馕、库车汤面、烤肉、薄皮包子、油塔子、面肺子。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>库车老城（热斯坦历史文化街区）、太古里夜市。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-neumorphic-primary/90 mb-2 flex items-center">
+                            <i class="fas fa-landmark fa-fw mr-2 text-neumorphic-primary/70 list-icon"></i>热门景点/玩乐项目
+                        </h4>
+                        <ul class="list-none pl-1 space-y-1.5 text-sm sm:text-base">
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>天山神秘大峡谷: 红褐色巨大山体群。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>克孜尔千佛洞: 中国开凿最早、规模最大的石窟群之一。</li>
+                            <li class="flex"><i class="fas fa-circle fa-xs mr-2.5 mt-1.5 text-neumorphic-secondary/50 list-icon"></i>库车王府、库车大寺、苏巴什佛寺遗址、库车老城。</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="interactive-button w-full mt-6 py-2.5 sm:py-3 px-4 bg-neumorphic-bg rounded-neumorphic-md neumorphic-interactive neumorphic-raised-sm text-neumorphic-primary font-semibold hover:text-opacity-80">
+                    <i class="fas fa-info-circle mr-2"></i>查看详情
+                </button>
+            </div>
+
+            <!-- Day 15: 返程 -->
+            <div class="neumorphic-card bg-neumorphic-bg rounded-neumorphic-lg p-5 sm:p-6 neumorphic-raised-md md:col-span-2 xl:col-span-1">
+                 <h3 class="text-xl sm:text-2xl font-bold text-neumorphic-primary mb-4 flex items-center">
+                    <i class="fas fa-plane-departure fa-fw mr-3 text-neumorphic-primary/80 list-icon"></i>Day 15: 返程
+                </h3>
+                <p class="text-neumorphic-secondary text-sm sm:text-base">
+                    根据航班时间，从库车飞往乌鲁木齐，然后返程。可在库车市区购买一些当地特产，如库车小白杏干、药茶等，作为美好的回忆。
+                </p>
+                 <button class="interactive-button w-full mt-6 py-2.5 sm:py-3 px-4 bg-neumorphic-bg rounded-neumorphic-md neumorphic-interactive neumorphic-raised-sm text-neumorphic-primary font-semibold hover:text-opacity-80">
+                    <i class="fas fa-shopping-bag mr-2"></i>购买特产
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="text-center mt-12 sm:mt-16 w-full max-w-3xl">
+        <div class="bg-neumorphic-bg rounded-neumorphic-md p-4 sm:p-5 neumorphic-pressed-sm">
+            <p class="text-neumorphic-secondary/80 text-xs sm:text-sm">
+                新疆15日游攻略 - 新拟态风格演示页面 &copy; 2024
+            </p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { animate, stagger } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+
+        const raisedShadow = "3px 3px 6px var(--neumorphic-shadow-dark), -3px -3px 6px var(--neumorphic-shadow-light)";
+        const pressedShadow = "inset 3px 3px 6px var(--neumorphic-shadow-dark), inset -3px -3px 6px var(--neumorphic-shadow-light)";
+
+        document.querySelectorAll('.interactive-button').forEach(button => {
+            let isPressed = false; // Initial state: raised
+
+            // Set initial shadow style if not already set by class (though .neumorphic-raised-sm should do this)
+            if (!button.style.boxShadow) {
+                 button.style.boxShadow = raisedShadow;
+            }
+
+            button.addEventListener('click', () => {
+                isPressed = !isPressed;
+                const targetShadow = isPressed ? pressedShadow : raisedShadow;
+                
+                animate(button, 
+                    { boxShadow: targetShadow },
+                    { duration: 0.15, easing: "ease-in-out" }
+                );
+            });
+        });
+
+        // Page load animations
+        animate(
+          document.querySelectorAll("header > div, main > h2, footer > div"), // Animate containers
+          { opacity: [0, 1], transform: ["translateY(15px)", "translateY(0px)"] },
+          { delay: stagger(0.1), duration: 0.5, easing: [0.22, 1, 0.36, 1] }
+        );
+        
+        animate(
+          document.querySelectorAll(".neumorphic-card"),
+          { opacity: [0, 1], transform: ["translateY(20px)", "translateY(0px)"] },
+          { delay: stagger(0.07, { start: 0.3 }), duration: 0.45, easing: [0.22, 1, 0.36, 1] } // Stagger cards after header/main title
+        );
+    </script>
+</body>
+</html>

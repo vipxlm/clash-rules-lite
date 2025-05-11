@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>便当网格 - 新疆15日深度环线</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/motion@latest/+esm"></script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-slate-900 text-slate-200 antialiased;
+        }
+        .bento-grid-container {
+            @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 p-4 md:p-8 min-h-screen;
+        }
+        .bento-item {
+            @apply bg-slate-800 p-4 md:p-6 rounded-xl shadow-xl flex flex-col transition-all duration-300; /* Added transition */
+        }
+        .bento-item:hover { /* Simple hover effect */
+            @apply transform scale-105 shadow-2xl;
+        }
+        .bento-item h2 {
+            @apply text-xl md:text-2xl font-bold text-sky-400 mb-3 flex items-center;
+        }
+        .bento-item h2 i {
+            @apply mr-2 text-sky-500;
+        }
+        .bento-item h3 {
+            @apply text-lg font-semibold text-amber-400 mt-4 mb-2;
+        }
+        .bento-item p, .bento-item ul {
+            @apply text-sm text-slate-300 leading-relaxed;
+        }
+        .bento-item ul {
+            @apply list-disc list-inside pl-2 space-y-1;
+        }
+        .bento-item .tag {
+            @apply inline-block bg-slate-700 text-slate-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full;
+        }
+        .bento-visual-placeholder { /* Inspired by te.html card-visual */
+            @apply mt-auto pt-4 flex justify-end space-x-1;
+        }
+        .bento-visual-placeholder div {
+            @apply w-3 h-3 rounded-sm bg-slate-500;
+        }
+        .bento-visual-placeholder div.highlight {
+            @apply bg-slate-400;
+        }
+
+        /* Span variations for bento grid */
+        .bento-item.col-span-1 { @apply sm:col-span-1; }
+        .bento-item.col-span-2 { @apply sm:col-span-2; }
+        .bento-item.row-span-1 { @apply sm:row-span-1; }
+        .bento-item.row-span-2 { @apply sm:row-span-2; }
+        
+        /* Specific item styling for asymmetrical layout */
+        /* Example: First item larger */
+        .bento-grid-container > .bento-item:nth-child(1) {
+            @apply sm:col-span-2 sm:row-span-2;
+        }
+         /* Example: A wide item */
+        .bento-grid-container > .bento-item:nth-child(5) {
+            @apply lg:col-span-2;
+        }
+        .bento-grid-container > .bento-item:nth-child(8) {
+            @apply lg:col-span-2 lg:row-span-1;
+        }
+         .bento-grid-container > .bento-item:nth-child(12) {
+            @apply sm:col-span-2;
+        }
+
+
+        header.page-header {
+            @apply py-6 md:py-10 text-center bg-slate-800/50;
+        }
+        header.page-header h1 {
+            @apply text-3xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500;
+        }
+        footer.page-footer {
+            @apply text-center py-6 md:py-8 text-slate-400 text-sm border-t border-slate-700;
+        }
+    </style>
+</head>
+<body class="bg-slate-900">
+
+    <header class="page-header">
+        <h1><i class="fas fa-map-signs mr-3"></i>新疆15日・便当盒式行程概览</h1>
+    </header>
+
+    <main class="bento-grid-container" id="bentoGrid">
+        <!-- Item 1: Day 1-2 Urumqi -->
+        <div class="bento-item" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="0.1">
+            <h2><i class="fas fa-city"></i>Day 1 & 2: 乌鲁木齐</h2>
+            <h3><i class="fas fa-utensils"></i>美食推荐</h3>
+            <ul>
+                <li>抓饭, 烤羊肉串, 大盘鸡, 烤包子, 馕</li>
+                <li>国际大巴扎美食街, 幸福路美食街</li>
+                <li>胡萝卜汁, 新疆酸奶</li>
+            </ul>
+            <h3><i class="fas fa-mountain-sun"></i>热门景点</h3>
+            <ul>
+                <li>天山天池 (Day 2 重点)</li>
+                <li>新疆维吾尔自治区博物馆</li>
+                <li>国际大巴扎, 红山公园</li>
+            </ul>
+            <div class="bento-visual-placeholder">
+                <div class="highlight"></div><div></div><div></div><div class="highlight"></div><div></div>
+            </div>
+        </div>
+
+        <!-- Item 2: Day 3 Burqin -->
+        <div class="bento-item" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="0.2">
+            <h2><i class="fas fa-water"></i>Day 3: 布尔津 (五彩滩)</h2>
+            <h3><i class="fas fa-fish"></i>美食推荐</h3>
+            <ul>
+                <li>额尔齐斯河冷水鱼, 俄罗斯风味小吃</li>
+                <li>布尔津美食街 (夜市)</li>
+            </ul>
+            <h3><i class="fas fa-palette"></i>热门景点</h3>
+            <ul>
+                <li>五彩滩 (雅丹地貌, 日落)</li>
+                <li>额尔齐斯河, 中俄老码头风情街</li>
+            </ul>
+             <div class="bento-visual-placeholder">
+                <div></div><div class="highlight"></div><div></div>
+            </div>
+        </div>
+
+        <!-- Item 3: Day 4-5 Kanas -->
+        <div class="bento-item" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="0.3">
+            <h2><i class="fas fa-seedling"></i>Day 4 & 5: 喀纳斯</h2>
+            <h3><i class="fas fa-cheese"></i>美食推荐</h3>
+            <ul>
+                <li>图瓦特色 (奶茶, 手抓肉), 喀纳斯湖冷水鱼</li>
+            </ul>
+            <h3><i class="fas fa-hiking"></i>热门景点</h3>
+            <ul>
+                <li>喀纳斯湖, “三湾” (神仙湾, 月亮湾, 卧龙湾)</li>
+                <li>观鱼台, 图瓦村落</li>
+            </ul>
+            <div class="bento-visual-placeholder">
+                <div class="highlight"></div><div></div><div class="highlight"></div><div></div>
+            </div>
+        </div>
+
+        <!-- Item 4: Day 6 Hemu -->
+        <div class="bento-item" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="0.4">
+            <h2><i class="fas fa-home"></i>Day 6: 禾木村</h2>
+            <h3><i class="fas fa-bread-slice"></i>美食推荐</h3>
+            <ul>
+                <li>图瓦家常菜, 马奶酒, 蓝莓酱</li>
+            </ul>
+            <h3><i class="fas fa-camera-retro"></i>热门景点</h3>
+            <ul>
+                <li>禾木观景平台 (晨雾, 日出, 星空)</li>
+                <li>禾木桥, 白桦林, 骑马</li>
+            </ul>
+            <div class="bento-visual-placeholder">
+                <div></div><div class="highlight"></div><div></div><div></div>
+            </div>
+        </div>
+
+        <!-- Item 5: Day 7 Urho Ghost City -->
+        <div class="bento-item" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="0.5">
+            <h2><i class="fas fa-ghost"></i>Day 7: 乌尔禾魔鬼城</h2>
+            <h3><i class="fas fa-drumstick-bite"></i>美食推荐</h3>
+            <ul>
+                <li>新疆家常菜, 烤肉</li>
+            </ul>
+            <h3><i class="fas fa-landmark"></i>热门景点</h3>
+            <ul>
+                <li>世界魔鬼城 (雅丹地貌, 日落)</li>
+                <li>艾里克湖, 克拉玛依油田</li>
+            </ul>
+            <div class="bento-visual-placeholder">
+                <div class="highlight"></div><div class="highlight"></div><div></div>
+            </div>
+        </div>
+
+        <!-- Item 6: Day 8-9 Sayram Lake -->
+        <div class="bento-item" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="0.6">
+            <h2><i class="fas fa-water"></i>Day 8 & 9: 赛里木湖</h2>
+            <h3><i class="fas fa-concierge-bell"></i>美食推荐</h3>
+            <ul>
+                <li>高白鲑 (特产), 羊肉, 奶制品</li>
+            </ul>
+            <h3><i class="fas fa-star"></i>热门景点</h3>
+            <ul>
+                <li>环湖游, 草原鲜花, 天鹅水鸟, 星空</li>
+            </ul>
+            <div class="bento-visual-placeholder">
+                <div></div><div class="highlight"></div><div></div><div class="highlight"></div>
+            </div>
+        </div>
+
+        <!-- Item 7: Day 10-11 Nalati Grassland -->
+        <div class="bento-item" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="0.7">
+            <h2><i class="fas fa-horse-head"></i>Day 10 & 11: 那拉提草原</h2>
+            <h3><i class="fas fa-drumstick-bite"></i>美食推荐</h3>
+            <ul>
+                <li>哈萨克族美食 (手抓肉, 马肠子, 烤全羊)</li>
+            </ul>
+            <h3><i class="fas fa-tree"></i>热门景点</h3>
+            <ul>
+                <li>空中草原, 河谷草原, 盘龙谷道</li>
+                <li>哈萨克民俗体验, 骑马</li>
+            </ul>
+            <div class="bento-visual-placeholder">
+                <div class="highlight"></div><div></div><div></div><div></div><div class="highlight"></div>
+            </div>
+        </div>
+
+        <!-- Item 8: Day 12 Bayinbuluke Grassland -->
+        <div class="bento-item" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="0.8">
+            <h2><i class="fas fa-cloud-sun"></i>Day 12: 巴音布鲁克草原</h2>
+            <h3><i class="fas fa-stroopwafel"></i>美食推荐</h3>
+            <ul>
+                <li>蒙古族美食 (手把肉, 奶皮子), 黑头羊</li>
+            </ul>
+            <h3><i class="fas fa-swan"></i>热门景点</h3>
+            <ul>
+                <li>九曲十八弯 (日落), 天鹅湖</li>
+            </ul>
+            <div class="bento-visual-placeholder">
+                <div></div><div class="highlight"></div><div></div>
+            </div>
+        </div>
+        
+        <!-- Item 9: Day 13-14 Kuqa -->
+        <div class="bento-item" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="0.9">
+            <h2><i class="fas fa-archway"></i>Day 13 & 14: 库车</h2>
+            <h3><i class="fas fa-bread-slice"></i>美食推荐</h3>
+            <ul>
+                <li>库车大馕, 库车汤面, 薄皮包子</li>
+                <li>库车老城 (热斯坦), 太古里夜市</li>
+            </ul>
+            <h3><i class="fas fa-gopuram"></i>热门景点</h3>
+            <ul>
+                <li>天山神秘大峡谷, 克孜尔千佛洞</li>
+                <li>库车王府, 库车大寺, 苏巴什佛寺遗址</li>
+            </ul>
+            <div class="bento-visual-placeholder">
+                <div class="highlight"></div><div></div><div class="highlight"></div><div></div><div></div>
+            </div>
+        </div>
+
+        <!-- Item 10: Day 15 Departure -->
+        <div class="bento-item" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="1.0">
+            <h2><i class="fas fa-plane-departure"></i>Day 15: 库车 — 返程</h2>
+            <p>根据航班时间，可在库车市区购买当地特产，如库车小白杏干、药茶等。</p>
+            <p class="mt-4 text-sky-300"><i class="fas fa-info-circle mr-1"></i> 描述: 采用模块化布局，将信息组织成独立的信息块。通过不对称网格和清晰的视觉层级，实现内容的高效展示。</p>
+            <p class="mt-2 text-xs text-slate-400">关键词: modular layout, information blocks, asymmetrical grid, clear visual hierarchy, content organization, efficient display</p>
+            <div class="bento-visual-placeholder">
+                <div></div><div class="highlight"></div>
+            </div>
+        </div>
+         <!-- Placeholder for alignment if needed, or more content -->
+        <div class="bento-item lg:col-span-2 hidden lg:flex flex-col items-center justify-center bg-slate-800/70" data-motion-initial_opacity="0" data-motion-initial_y="20" data-motion-animate_opacity="1" data-motion-animate_y="0" data-motion-transition_delay="1.1">
+            <i class="fas fa-route text-6xl text-sky-500 mb-4"></i>
+            <p class="text-xl font-semibold text-slate-300">旅途愉快!</p>
+            <p class="text-sm text-slate-400">探索新疆的壮丽景色</p>
+        </div>
+
+
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2024 新疆15日游攻略・Bento Grid 风格展示</p>
+        <p>灵感来源: 模块化布局, 不对称网格, 清晰视觉层级</p>
+    </footer>
+
+    <script type="module">
+        import { animate, stagger } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+
+        // Animate bento items on load
+        const items = document.querySelectorAll('.bento-item');
+        animate(items, 
+            { opacity: [0, 1], y: [20, 0] }, 
+            { delay: stagger(0.1), duration: 0.5, easing: "ease-out" }
+        );
+
+        // Optional: Add more complex animations or interactions
+        items.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                animate(item.querySelector('.bento-visual-placeholder div'), { scale: [1, 1.2, 1], rotate: [0, 15, -15, 0] }, { duration: 0.4 });
+            });
+        });
+    </script>
+
+</body>
+</html>

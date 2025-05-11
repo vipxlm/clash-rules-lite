@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大标题排版 - 新疆15日游</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/motion@latest/+esm"></script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            html {
+                font-family: 'Inter', sans-serif;
+                scroll-behavior: smooth;
+            }
+            body {
+                @apply bg-[#F8F8F8] text-[#1C1C1C] min-h-screen flex flex-col items-center antialiased;
+                /* Fallback for #1C1C1C if Tailwind JIT doesn't pick it up directly for text color */
+                color: #1C1C1C; 
+            }
+        }
+        .font-syne {
+            font-family: 'Syne', sans-serif;
+        }
+        .font-archivo-black { /* Alternative, not used by default in this template */
+            font-family: 'Archivo Black', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header class="w-full text-center py-12 md:py-20 px-4">
+        <h1 id="main-page-title" class="font-syne text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold text-[#1C1C1C] leading-none tracking-tighter balance-text">
+            新疆15日深度环线
+        </h1>
+        <p class="mt-4 md:mt-6 text-lg sm:text-xl md:text-2xl text-gray-600">英雄式排版风格</p>
+    </header>
+
+    <main class="w-full container mx-auto px-4 md:px-6 lg:px-8">
+        
+        <!-- Day 1 & 2: 乌鲁木齐 -->
+        <section class="day-section w-full py-12 md:py-16">
+          <h2 class="day-title-animate font-syne text-4xl sm:text-5xl md:text-6xl font-bold text-[#1C1C1C] mb-8 md:mb-10 leading-tight text-center">
+            Day 1 & 2: 乌鲁木齐
+          </h2>
+          <div class="day-content-animate text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto space-y-8">
+            <div>
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">美食推荐</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li><strong>特色菜品:</strong> 抓饭, 烤羊肉串, 大盘鸡, 烤包子, 馕, 拉条子(拌面), 羊杂汤.</li>
+                <li><strong>推荐餐厅/区域:</strong> 国际大巴扎美食街, 幸福路美食街, 魏家羊羔肉, 胖老汉新疆特色椒麻鸡.</li>
+                <li><strong>特色饮品/小食:</strong> 胡萝卜汁, 巴旦木饮料, 新疆酸奶(天润).</li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">热门景点/玩乐项目</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li>天山天池风景区 (Day 2 重点).</li>
+                <li>新疆维吾尔自治区博物馆.</li>
+                <li>国际大巴扎.</li>
+                <li>红山公园, 水磨沟公园.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Day 3: 布尔津县 -->
+        <section class="day-section w-full py-12 md:py-16">
+          <h2 class="day-title-animate font-syne text-4xl sm:text-5xl md:text-6xl font-bold text-[#1C1C1C] mb-8 md:mb-10 leading-tight text-center">
+            Day 3: 布尔津县 (途经五彩滩)
+          </h2>
+          <div class="day-content-animate text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto space-y-8">
+            <div>
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">美食推荐</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li><strong>特色菜品:</strong> 额尔齐斯河冷水鱼, 烤羊肉串, 俄罗斯风味小吃.</li>
+                <li><strong>推荐餐厅/区域:</strong> 布尔津美食街(夜市).</li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">热门景点/玩乐项目</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li>五彩滩: 雅丹地貌, 日落壮观.</li>
+                <li>额尔齐斯河, 中俄老码头风情街.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Day 4 & 5: 喀纳斯国家地质公园 -->
+        <section class="day-section w-full py-12 md:py-16">
+          <h2 class="day-title-animate font-syne text-4xl sm:text-5xl md:text-6xl font-bold text-[#1C1C1C] mb-8 md:mb-10 leading-tight text-center">
+            Day 4 & 5: 喀纳斯
+          </h2>
+          <div class="day-content-animate text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto space-y-8">
+            <div>
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">美食推荐</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li><strong>特色菜品:</strong> 图瓦特色美食, 喀纳斯湖冷水鱼, 野菜.</li>
+                <li><strong>推荐餐厅/区域:</strong> 景区内贾登峪生活区, 喀纳斯新村.</li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">热门景点/玩乐项目</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li>喀纳斯湖 (乘船游湖).</li>
+                <li>“三湾” (神仙湾, 月亮湾, 卧龙湾).</li>
+                <li>观鱼台 (俯瞰全景).</li>
+                <li>图瓦村落 (喀纳斯新村/老村), 白哈巴村 (可选).</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Day 6: 禾木村 -->
+        <section class="day-section w-full py-12 md:py-16">
+          <h2 class="day-title-animate font-syne text-4xl sm:text-5xl md:text-6xl font-bold text-[#1C1C1C] mb-8 md:mb-10 leading-tight text-center">
+            Day 6: 禾木村
+          </h2>
+          <div class="day-content-animate text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto space-y-8">
+            <div>
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">美食推荐</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li><strong>特色菜品:</strong> 图瓦家常菜, 烤羊肉, 马奶酒, 蓝莓酱.</li>
+                <li><strong>推荐餐厅/区域:</strong> 禾木村内民宿和餐厅.</li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">热门景点/玩乐项目</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li>禾木观景平台 (全景, 晨雾, 日出, 星空).</li>
+                <li>禾木桥, 白桦林.</li>
+                <li>图瓦人家访, 骑马.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Day 7: 乌尔禾魔鬼城 -->
+        <section class="day-section w-full py-12 md:py-16">
+          <h2 class="day-title-animate font-syne text-4xl sm:text-5xl md:text-6xl font-bold text-[#1C1C1C] mb-8 md:mb-10 leading-tight text-center">
+            Day 7: 乌尔禾魔鬼城
+          </h2>
+          <div class="day-content-animate text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto space-y-8">
+            <div>
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">美食推荐</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li><strong>特色菜品:</strong> 新疆家常菜, 烤肉.</li>
+                <li><strong>推荐餐厅/区域:</strong> 乌尔禾镇或克拉玛依市区.</li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">热门景点/玩乐项目</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li>世界魔鬼城 (乌尔禾风城).</li>
+                <li>艾里克湖 (可选), 克拉玛依油田 (外观).</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Day 8 & 9: 赛里木湖 -->
+        <section class="day-section w-full py-12 md:py-16">
+          <h2 class="day-title-animate font-syne text-4xl sm:text-5xl md:text-6xl font-bold text-[#1C1C1C] mb-8 md:mb-10 leading-tight text-center">
+            Day 8 & 9: 赛里木湖
+          </h2>
+          <div class="day-content-animate text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto space-y-8">
+            <div>
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">美食推荐</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li><strong>特色菜品:</strong> 高白鲑 (赛里木湖特产), 羊肉, 奶制品.</li>
+                <li><strong>推荐餐厅/区域:</strong> 景区门口或湖边餐厅/蒙古包.</li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">热门景点/玩乐项目</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li>环湖游 (核心体验).</li>
+                <li>夏季草原鲜花, 观赏天鹅水鸟.</li>
+                <li>星空观赏, 骑马/徒步.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Day 10 & 11: 那拉提草原 -->
+        <section class="day-section w-full py-12 md:py-16">
+          <h2 class="day-title-animate font-syne text-4xl sm:text-5xl md:text-6xl font-bold text-[#1C1C1C] mb-8 md:mb-10 leading-tight text-center">
+            Day 10 & 11: 那拉提草原
+          </h2>
+          <div class="day-content-animate text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto space-y-8">
+            <div>
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">美食推荐</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li><strong>特色菜品:</strong> 哈萨克族美食 (手抓肉, 纳仁, 马肠子, 马奶酒).</li>
+                <li><strong>推荐餐厅/区域:</strong> 那拉提镇餐厅, 景区内餐饮点.</li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">热门景点/玩乐项目</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li>空中草原, 河谷草原.</li>
+                <li>盘龙谷道, 哈萨克民俗体验.</li>
+                <li>骑马, 沃尔塔交塔.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Day 12: 巴音布鲁克草原 -->
+        <section class="day-section w-full py-12 md:py-16">
+          <h2 class="day-title-animate font-syne text-4xl sm:text-5xl md:text-6xl font-bold text-[#1C1C1C] mb-8 md:mb-10 leading-tight text-center">
+            Day 12: 巴音布鲁克草原
+          </h2>
+          <div class="day-content-animate text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto space-y-8">
+            <div>
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">美食推荐</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li><strong>特色菜品:</strong> 蒙古族美食 (手把肉, 烤羊排), 黑头羊.</li>
+                <li><strong>推荐餐厅/区域:</strong> 巴音布鲁克镇餐厅.</li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">热门景点/玩乐项目</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li>九曲十八弯 (日落观赏点).</li>
+                <li>天鹅湖自然保护区.</li>
+                <li>巴西里克观景台, 草原骑马/摩托车.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Day 13 & 14: 库车 -->
+        <section class="day-section w-full py-12 md:py-16">
+          <h2 class="day-title-animate font-syne text-4xl sm:text-5xl md:text-6xl font-bold text-[#1C1C1C] mb-8 md:mb-10 leading-tight text-center">
+            Day 13 & 14: 库车
+          </h2>
+          <div class="day-content-animate text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto space-y-8">
+            <div>
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">美食推荐</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li><strong>特色菜品:</strong> 库车大馕, 库车汤面, 烤肉, 薄皮包子.</li>
+                <li><strong>推荐餐厅/区域:</strong> 库车老城 (热斯坦历史文化街区), 太古里夜市.</li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h3 class="font-syne text-xl sm:text-2xl md:text-3xl font-semibold text-[#333333] mb-4 text-center">热门景点/玩乐项目</h3>
+              <ul class="list-none space-y-2 text-center">
+                <li>天山神秘大峡谷 (库车大峡谷).</li>
+                <li>克孜尔千佛洞.</li>
+                <li>库车王府, 库车大寺, 苏巴什佛寺遗址.</li>
+                <li>库车老城 (热斯坦街).</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Day 15: 返程 -->
+        <section class="day-section w-full py-12 md:py-16">
+          <h2 class="day-title-animate font-syne text-4xl sm:text-5xl md:text-6xl font-bold text-[#1C1C1C] mb-8 md:mb-10 leading-tight text-center">
+            Day 15: 库车 — 乌鲁木齐 — 返程
+          </h2>
+          <div class="day-content-animate text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto space-y-4 text-center">
+            <p>根据航班时间, 可在库车市区购买当地特产, 如库车小白杏干、药茶等。</p>
+            <p>旅途顺利结束！</p>
+          </div>
+        </section>
+
+    </main>
+
+    <footer class="w-full text-center py-10 mt-12 md:mt-16">
+        <p class="text-gray-500 text-sm">新疆15日游攻略 &bull; Hero Typography Style Example</p>
+    </footer>
+
+    <script type="module">
+        import { animate, stagger, inView } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+
+        // Main page title animation (character by character)
+        const mainPageTitle = document.getElementById('main-page-title');
+        if (mainPageTitle) {
+            const text = mainPageTitle.textContent.trim();
+            mainPageTitle.innerHTML = ''; // Clear existing text
+            text.split('').forEach(char => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char; // Preserve spaces
+                span.style.display = 'inline-block'; // Crucial for individual animation
+                span.style.opacity = 0;
+                span.style.transform = 'translateY(40px)'; // Start slightly lower and more impactful
+                mainPageTitle.appendChild(span);
+            });
+
+            animate(
+                mainPageTitle.querySelectorAll('span'),
+                { opacity: 1, transform: 'translateY(0px)' },
+                { delay: stagger(0.05), duration: 0.7, easing: [0.22, 1, 0.36, 1] } // Smooth easing
+            );
+        }
+
+        // Day titles animation (triggered on view)
+        document.querySelectorAll('.day-title-animate').forEach((el) => {
+            el.style.opacity = 0; // Start hidden for animation
+            inView(el, (info) => {
+                animate(info.target,
+                    { opacity: [0, 1], scale: [0.85, 1], y: [25, 0] }, // More pronounced entry
+                    { duration: 0.9, easing: "cubic-bezier(0.25, 1, 0.5, 1)" } // Expressive ease
+                );
+                return () => { // Optional: Reset if it goes out of view and you want it to re-animate
+                    // animate(info.target, { opacity: 0, scale: 0.85, y: 25 }, { duration: 0.3 });
+                }
+            }, { margin: "-20% 0px -20% 0px" }); // Trigger when 20% from top/bottom edge
+        });
+
+        // Day content animation (triggered on view, animating children)
+        document.querySelectorAll('.day-content-animate').forEach((el) => {
+            // Animate direct children of .day-content-animate (e.g., the divs containing h3 and ul)
+            const contentBlocks = Array.from(el.children); 
+            contentBlocks.forEach(block => block.style.opacity = 0); // Start blocks hidden
+
+            inView(el, (info) => {
+                animate(contentBlocks,
+                    { opacity: [0, 1], x: [-30, 0] }, // Slide in from left
+                    { delay: stagger(0.15, { start: 0.1 }), duration: 0.8, easing: "ease-out" }
+                );
+            }, { margin: "-25% 0px -25% 0px" }); // Trigger when 25% from top/bottom edge
+        });
+    </script>
+</body>
+</html>

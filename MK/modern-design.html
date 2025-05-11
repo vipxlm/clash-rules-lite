@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>现代风格 - 新疆15日深度环线</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module">
+        import { animate, stagger } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            animate(
+                "header h1",
+                { y: [-20, 0], opacity: [0, 1] },
+                { duration: 0.8, easing: "ease-out" }
+            );
+            animate(
+                ".hero-section",
+                { scale: [0.95, 1], opacity: [0, 1] },
+                { duration: 1, easing: "ease-out", delay: 0.2 }
+            );
+            animate(
+                ".content-card",
+                { y: [30, 0], opacity: [0, 1] },
+                { duration: 0.7, delay: stagger(0.15), easing: "ease-out" }
+            );
+            const buttons = document.querySelectorAll('.cta-button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    animate(button, { scale: 1.05 }, { duration: 0.2 });
+                });
+                button.addEventListener('mouseleave', () => {
+                    animate(button, { scale: 1 }, { duration: 0.2 });
+                });
+            });
+        });
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Poppins', sans-serif;
+            @apply bg-gray-50 text-slate-700 antialiased;
+        }
+        .hero-section {
+            @apply bg-cover bg-center rounded-lg shadow-xl overflow-hidden;
+        }
+        .content-card {
+            @apply bg-white shadow-lg rounded-lg p-6 md:p-8 mb-6 border-l-4 border-teal-500;
+        }
+        .content-card h2 {
+            @apply text-2xl font-semibold text-teal-600 mb-4 flex items-center;
+        }
+        .content-card h2 i {
+            @apply mr-3 text-teal-500;
+        }
+        .content-card h3 {
+            @apply text-lg font-semibold text-slate-600 mt-4 mb-2;
+        }
+        .content-card ul {
+            @apply list-disc list-inside pl-4 space-y-1 text-slate-600;
+        }
+        .content-card p {
+            @apply text-slate-600 leading-relaxed mb-2;
+        }
+        .cta-button {
+            @apply inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition-colors duration-300;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <header class="py-10 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-800">现代风格 - 新疆15日深度环线</h1>
+        <p class="text-lg text-slate-500 mt-2">以简洁线条、清晰排版，打造用户友好的旅行计划。</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 pb-12">
+
+        <section class="hero-section mb-12 h-80 md:h-96" style="background-image: url('https://placehold.co/1200x600/4FD1C5/FFFFFF?text=新疆风光&font=poppins');">
+            <div class="bg-black bg-opacity-30 h-full flex flex-col justify-center items-center text-center p-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">探索壮美新疆</h2>
+                <p class="text-xl text-gray-200 mb-6">15日深度游，体验独特文化与自然奇观。</p>
+                <a href="#itinerary" class="cta-button text-lg">查看行程亮点</a>
+            </div>
+        </section>
+
+        <div id="itinerary">
+            <div class="content-card">
+                <h2 id="day1-2"><i class="fas fa-map-marker-alt"></i>Day 1 & 2: 乌鲁木齐</h2>
+                <h3><i class="fas fa-utensils"></i>美食推荐</h3>
+                <p><strong>特色菜品:</strong> 抓饭、烤羊肉串、大盘鸡、烤包子、馕、拉条子（拌面）、羊杂汤。</p>
+                <p><strong>推荐餐厅/区域:</strong></p>
+                <ul>
+                    <li>国际大巴扎美食街：各类新疆小吃。</li>
+                    <li>幸福路美食街：沙湾大盘鸡等。</li>
+                    <li>魏家羊羔肉、胖老汉新疆特色椒麻鸡、阔希玛克拉烤包子。</li>
+                    <li>当地人推荐的丸子汤、风干肉抓饭馆。</li>
+                </ul>
+                <p><strong>特色饮品/小食:</strong> 胡萝卜汁、巴旦木饮料、新疆酸奶（如天润）。</p>
+                <h3><i class="fas fa-mountain-sun"></i>热门景点/玩乐项目 (适合家庭)</h3>
+                <ul>
+                    <li>天山天池风景区: 高山湖泊，可乘船游湖，欣赏博格达峰雪山风光。（Day 2 重点）</li>
+                    <li>新疆维吾尔自治区博物馆: 了解新疆历史文化。</li>
+                    <li>国际大巴扎: 体验西域风情，购买纪念品。</li>
+                    <li>红山公园: 市区制高点，可俯瞰乌市全景。</li>
+                    <li>水磨沟公园: 风景优美，适合休闲散步。</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 id="day3"><i class="fas fa-map-marker-alt"></i>Day 3: 布尔津县 (途经五彩滩)</h2>
+                <h3><i class="fas fa-utensils"></i>美食推荐</h3>
+                <p><strong>特色菜品:</strong> 额尔齐斯河冷水鱼（烤鱼、炖鱼）、烤羊肉串、俄罗斯风味小吃。</p>
+                <p><strong>推荐餐厅/区域:</strong> 布尔津美食街（夜市）。</p>
+                <h3><i class="fas fa-image"></i>热门景点/玩乐项目 (适合家庭)</h3>
+                <ul>
+                    <li>五彩滩: 雅丹地貌，日落时分色彩斑斓。</li>
+                    <li>额尔齐斯河: 河边散步。</li>
+                    <li>中俄老码头风情街: 了解当地历史文化。</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 id="day4-5"><i class="fas fa-map-marker-alt"></i>Day 4 & 5: 喀纳斯国家地质公园</h2>
+                <h3><i class="fas fa-utensils"></i>美食推荐</h3>
+                <p><strong>特色菜品:</strong> 图瓦特色美食（奶茶、手抓肉）、喀纳斯湖冷水鱼。</p>
+                <p><strong>推荐餐厅/区域:</strong> 景区内贾登峪生活区或喀纳斯新村。</p>
+                <h3><i class="fas fa-hiking"></i>热门景点/玩乐项目 (适合家庭)</h3>
+                <ul>
+                    <li>喀纳斯湖: 核心景点，可乘船游湖。</li>
+                    <li>“三湾” (神仙湾、月亮湾、卧龙湾): 经典徒步或乘区间车游览。</li>
+                    <li>观鱼台: 俯瞰喀纳斯湖全景。</li>
+                    <li>图瓦村落: 体验图瓦民俗风情。</li>
+                    <li>白哈巴村 (若允许): “西北第一村”。</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h2 id="day6"><i class="fas fa-map-marker-alt"></i>Day 6: 禾木村</h2>
+                <h3><i class="fas fa-utensils"></i>美食推荐</h3>
+                <p><strong>特色菜品:</strong> 图瓦家常菜、烤羊肉、马奶酒、蓝莓酱。</p>
+                <p><strong>推荐餐厅/区域:</strong> 禾木村内民宿和餐厅。</p>
+                <h3><i class="fas fa-camera-retro"></i>热门景点/玩乐项目 (适合家庭)</h3>
+                <ul>
+                    <li>禾木观景平台: 拍摄全景、晨雾、日出、星空。</li>
+                    <li>禾木桥: 标志性建筑。</li>
+                    <li>白桦林: 秋季金黄一片。</li>
+                    <li>图瓦人家访: 体验民俗。</li>
+                    <li>骑马: 草原体验（注意安全）。</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 id="day7"><i class="fas fa-map-marker-alt"></i>Day 7: 乌尔禾魔鬼城 (克拉玛依市)</h2>
+                 <h3><i class="fas fa-utensils"></i>美食推荐</h3>
+                <p><strong>特色菜品:</strong> 新疆家常菜、烤肉。</p>
+                <p><strong>推荐餐厅/区域:</strong> 乌尔禾镇上或克拉玛依市区。</p>
+                <h3><i class="fas fa-ghost"></i>热门景点/玩乐项目 (适合家庭)</h3>
+                <ul>
+                    <li>世界魔鬼城 (乌尔禾风城): 雅丹地貌，区间小火车游览。</li>
+                    <li>艾里克湖: 沙漠湖泊。</li>
+                    <li>克拉玛依油田: 石油工业文化。</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 id="day8-9"><i class="fas fa-map-marker-alt"></i>Day 8 & 9: 赛里木湖</h2>
+                <h3><i class="fas fa-utensils"></i>美食推荐</h3>
+                <p><strong>特色菜品:</strong> 高白鲑（赛里木湖特产）、羊肉、奶制品。</p>
+                <p><strong>推荐餐厅/区域:</strong> 景区门口或湖边餐厅、蒙古包。</p>
+                <h3><i class="fas fa-water"></i>热门景点/玩乐项目 (适合家庭)</h3>
+                <ul>
+                    <li>环湖游: 核心体验，沿途多观景点。</li>
+                    <li>草原鲜花: 夏季野花盛开。</li>
+                    <li>天鹅及水鸟: 特定季节可见。</li>
+                    <li>星空: 光污染少，适合观星。</li>
+                    <li>骑马/徒步: 湖边草原体验。</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 id="day10-11"><i class="fas fa-map-marker-alt"></i>Day 10 & 11: 那拉提草原</h2>
+                <h3><i class="fas fa-utensils"></i>美食推荐</h3>
+                <p><strong>特色菜品:</strong> 哈萨克族美食（手抓肉、纳仁、马肠子）、烤全羊。</p>
+                <p><strong>推荐餐厅/区域:</strong> 那拉提镇上餐厅，景区内餐饮点。</p>
+                <h3><i class="fas fa-horse"></i>热门景点/玩乐项目 (适合家庭)</h3>
+                <ul>
+                    <li>空中草原: 核心景区，视野开阔。</li>
+                    <li>河谷草原: 巩乃斯河流过，景色秀美。</li>
+                    <li>盘龙谷道: 森林草原景观。</li>
+                    <li>哈萨克民俗体验: 参观毡房，了解文化。</li>
+                    <li>骑马: 草原经典项目。</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 id="day12"><i class="fas fa-map-marker-alt"></i>Day 12: 巴音布鲁克草原</h2>
+                <h3><i class="fas fa-utensils"></i>美食推荐</h3>
+                <p><strong>特色菜品:</strong> 蒙古族美食（手把肉、烤羊排）、黑头羊。</p>
+                <p><strong>推荐餐厅/区域:</strong> 巴音布鲁克镇上餐厅。</p>
+                <h3><i class="fas fa-sun"></i>热门景点/玩乐项目 (适合家庭)</h3>
+                <ul>
+                    <li>九曲十八弯: 著名日落观赏点。</li>
+                    <li>天鹅湖自然保护区: 中国最大天鹅繁殖地。</li>
+                    <li>巴西里克观景台: 俯瞰草原和湿地。</li>
+                    <li>草原骑马或摩托车体验。</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 id="day13-14"><i class="fas fa-map-marker-alt"></i>Day 13 & 14: 库车</h2>
+                <h3><i class="fas fa-utensils"></i>美食推荐</h3>
+                <p><strong>特色菜品:</strong> 库车大馕、库车汤面、烤肉、薄皮包子。</p>
+                <p><strong>推荐餐厅/区域:</strong> 库车老城（热斯坦历史文化街区）、太古里夜市。</p>
+                <h3><i class="fas fa-landmark"></i>热门景点/玩乐项目 (适合家庭)</h3>
+                <ul>
+                    <li>天山神秘大峡谷: 红褐色巨大山体群，适合徒步。</li>
+                    <li>克孜尔千佛洞: 中国最早石窟群之一。</li>
+                    <li>库车王府: 了解末代库车王历史。</li>
+                    <li>库车大寺: 新疆第二大寺。</li>
+                    <li>苏巴什佛寺遗址: 古丝绸之路重要佛寺遗址。</li>
+                    <li>库车老城 (热斯坦街): 体验民俗风情。</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h2 id="day15"><i class="fas fa-plane-departure"></i>Day 15: 库车 — 乌鲁木齐 (飞机) — 返程</h2>
+                <p>根据航班时间，可在库车市区购买一些当地特产，如库车小白杏干、药茶等。</p>
+                <div class="mt-6 text-center">
+                    <a href="#" class="cta-button">预订您的新疆之旅</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center border-t border-gray-200">
+        <p class="text-slate-500 text-sm">&copy; 2024 新疆15日游攻略. 版权所有.</p>
+        <p class="text-xs text-slate-400 mt-1">现代风格设计演示</p>
+    </footer>
+
+</body>
+</html>

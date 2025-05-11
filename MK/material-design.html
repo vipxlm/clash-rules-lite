@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质感设计 - 新疆15日深度环线</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/motion@latest/+esm" type="module"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .fab-button {
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            transform: scale(0);
+            pointer-events: none;
+        }
+        /* 辅助滚动条美化，可选 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #bdbdbd;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-zinc-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <h1 class="text-xl font-medium text-zinc-700">质感设计 - 新疆15日深度环线</h1>
+            <span class="material-icons-outlined text-zinc-600">travel_explore</span>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        <div class="mb-6">
+            <h2 class="text-2xl font-medium text-zinc-700 mb-1">新疆15日深度环线优化方案</h2>
+            <p class="text-sm text-zinc-500">谷歌倡导，以物理世界的隐喻为基础，通过卡片式布局、Z轴深度感、有意义的动画、响应式交互和大胆的图形元素，创造直观体验。</p>
+            <p class="text-xs text-zinc-400 italic mt-1">Keywords: material metaphor, card-based layout, z-depth, meaningful animation, responsive interaction, bold graphics.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Day 1 & 2 Card -->
+            <div class="card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-400">
+                <div class="p-5 flex-grow">
+                    <h3 class="text-lg font-medium text-zinc-700 mb-3 flex items-center">
+                        <span class="material-icons-outlined mr-2 text-amber-500">calendar_today</span>
+                        Day 1 & 2: 乌鲁木齐
+                    </h3>
+                    <div class="mb-4">
+                        <h4 class="text-md font-medium text-green-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">restaurant</span>美食推荐</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>特色菜品: 抓饭, 烤羊肉串, 大盘鸡, 烤包子, 馕, 拉条子, 羊杂汤</li>
+                            <li>推荐餐厅: 国际大巴扎美食街, 幸福路美食街, 魏家羊羔肉</li>
+                            <li>特色饮品: 胡萝卜汁, 巴旦木饮料, 新疆酸奶</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-medium text-blue-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">attractions</span>热门景点</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>天山天池风景区 (Day 2 重点)</li>
+                            <li>新疆维吾尔自治区博物馆</li>
+                            <li>国际大巴扎</li>
+                            <li>红山公园, 水磨沟公园</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+                    <button class="fab-button bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-transform duration-150 ease-in-out hover:scale-110">
+                        <span class="material-icons-outlined">add_location_alt</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 3 Card -->
+            <div class="card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-400">
+                <div class="p-5 flex-grow">
+                    <h3 class="text-lg font-medium text-zinc-700 mb-3 flex items-center">
+                        <span class="material-icons-outlined mr-2 text-amber-500">calendar_today</span>
+                        Day 3: 布尔津县 (途经五彩滩)
+                    </h3>
+                    <div class="mb-4">
+                        <h4 class="text-md font-medium text-green-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">restaurant</span>美食推荐</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>特色菜品: 额尔齐斯河冷水鱼, 烤羊肉串, 俄罗斯风味小吃</li>
+                            <li>推荐餐厅: 布尔津美食街（夜市）</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-medium text-blue-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">attractions</span>热门景点</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>五彩滩 (日落壮观)</li>
+                            <li>额尔齐斯河, 中俄老码头风情街</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+                     <button class="fab-button bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-transform duration-150 ease-in-out hover:scale-110">
+                        <span class="material-icons-outlined">add_location_alt</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 4 & 5 Card -->
+            <div class="card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-400">
+                <div class="p-5 flex-grow">
+                    <h3 class="text-lg font-medium text-zinc-700 mb-3 flex items-center">
+                        <span class="material-icons-outlined mr-2 text-amber-500">calendar_today</span>
+                        Day 4 & 5: 喀纳斯国家地质公园
+                    </h3>
+                    <div class="mb-4">
+                        <h4 class="text-md font-medium text-green-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">restaurant</span>美食推荐</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>特色菜品: 图瓦特色美食, 喀纳斯湖冷水鱼, 野菜</li>
+                            <li>推荐餐厅: 景区内贾登峪生活区或喀纳斯新村</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-medium text-blue-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">attractions</span>热门景点</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>喀纳斯湖 (乘船游湖)</li>
+                            <li>“三湾” (神仙湾, 月亮湾, 卧龙湾)</li>
+                            <li>观鱼台, 图瓦村落, 白哈巴村 (可选)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+                     <button class="fab-button bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-transform duration-150 ease-in-out hover:scale-110">
+                        <span class="material-icons-outlined">add_location_alt</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 6 Card -->
+            <div class="card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-400">
+                <div class="p-5 flex-grow">
+                    <h3 class="text-lg font-medium text-zinc-700 mb-3 flex items-center">
+                        <span class="material-icons-outlined mr-2 text-amber-500">calendar_today</span>
+                        Day 6: 禾木村
+                    </h3>
+                    <div class="mb-4">
+                        <h4 class="text-md font-medium text-green-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">restaurant</span>美食推荐</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>特色菜品: 图瓦家常菜, 烤羊肉, 马奶酒, 蓝莓酱</li>
+                            <li>推荐餐厅: 禾木村内民宿和餐厅</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-medium text-blue-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">attractions</span>热门景点</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>禾木观景平台 (晨雾, 日出, 星空)</li>
+                            <li>禾木桥, 白桦林, 图瓦人家访, 骑马</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+                     <button class="fab-button bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-transform duration-150 ease-in-out hover:scale-110">
+                        <span class="material-icons-outlined">add_location_alt</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 7 Card -->
+            <div class="card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-400">
+                <div class="p-5 flex-grow">
+                    <h3 class="text-lg font-medium text-zinc-700 mb-3 flex items-center">
+                        <span class="material-icons-outlined mr-2 text-amber-500">calendar_today</span>
+                        Day 7: 乌尔禾魔鬼城 (克拉玛依市)
+                    </h3>
+                    <div class="mb-4">
+                        <h4 class="text-md font-medium text-green-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">restaurant</span>美食推荐</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>特色菜品: 新疆家常菜, 烤肉</li>
+                            <li>推荐餐厅: 乌尔禾镇或克拉玛依市区</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-medium text-blue-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">attractions</span>热门景点</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>世界魔鬼城 (雅丹地貌, 日落)</li>
+                            <li>艾里克湖, 克拉玛依油田 (可选)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+                     <button class="fab-button bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-transform duration-150 ease-in-out hover:scale-110">
+                        <span class="material-icons-outlined">add_location_alt</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 8 & 9 Card -->
+            <div class="card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-400">
+                <div class="p-5 flex-grow">
+                    <h3 class="text-lg font-medium text-zinc-700 mb-3 flex items-center">
+                        <span class="material-icons-outlined mr-2 text-amber-500">calendar_today</span>
+                        Day 8 & 9: 赛里木湖
+                    </h3>
+                    <div class="mb-4">
+                        <h4 class="text-md font-medium text-green-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">restaurant</span>美食推荐</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>特色菜品: 高白鲑, 羊肉, 奶制品, 野菜</li>
+                            <li>推荐餐厅: 景区门口或湖边餐厅/蒙古包</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-medium text-blue-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">attractions</span>热门景点</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>环湖游 (核心体验)</li>
+                            <li>草原鲜花 (夏季), 天鹅及水鸟, 星空</li>
+                            <li>骑马/徒步</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+                     <button class="fab-button bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-transform duration-150 ease-in-out hover:scale-110">
+                        <span class="material-icons-outlined">add_location_alt</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 10 & 11 Card -->
+            <div class="card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-400">
+                <div class="p-5 flex-grow">
+                    <h3 class="text-lg font-medium text-zinc-700 mb-3 flex items-center">
+                        <span class="material-icons-outlined mr-2 text-amber-500">calendar_today</span>
+                        Day 10 & 11: 那拉提草原
+                    </h3>
+                    <div class="mb-4">
+                        <h4 class="text-md font-medium text-green-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">restaurant</span>美食推荐</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>特色菜品: 哈萨克族美食 (手抓肉, 纳仁, 马肠子), 烤全羊</li>
+                            <li>推荐餐厅: 那拉提镇或景区内</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-medium text-blue-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">attractions</span>热门景点</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>空中草原, 河谷草原, 盘龙谷道</li>
+                            <li>哈萨克民俗体验, 骑马, 沃尔塔交塔</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+                     <button class="fab-button bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-transform duration-150 ease-in-out hover:scale-110">
+                        <span class="material-icons-outlined">add_location_alt</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 12 Card -->
+            <div class="card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-400">
+                <div class="p-5 flex-grow">
+                    <h3 class="text-lg font-medium text-zinc-700 mb-3 flex items-center">
+                        <span class="material-icons-outlined mr-2 text-amber-500">calendar_today</span>
+                        Day 12: 巴音布鲁克草原
+                    </h3>
+                    <div class="mb-4">
+                        <h4 class="text-md font-medium text-green-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">restaurant</span>美食推荐</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>特色菜品: 蒙古族美食 (手把肉, 烤羊排), 黑头羊</li>
+                            <li>推荐餐厅: 巴音布鲁克镇</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-medium text-blue-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">attractions</span>热门景点</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>九曲十八弯 (日落)</li>
+                            <li>天鹅湖自然保护区, 巴西里克观景台</li>
+                            <li>草原骑马/摩托车</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+                     <button class="fab-button bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-transform duration-150 ease-in-out hover:scale-110">
+                        <span class="material-icons-outlined">add_location_alt</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 13 & 14 Card -->
+            <div class="card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-400">
+                <div class="p-5 flex-grow">
+                    <h3 class="text-lg font-medium text-zinc-700 mb-3 flex items-center">
+                        <span class="material-icons-outlined mr-2 text-amber-500">calendar_today</span>
+                        Day 13 & 14: 库车
+                    </h3>
+                    <div class="mb-4">
+                        <h4 class="text-md font-medium text-green-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">restaurant</span>美食推荐</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>特色菜品: 库车大馕, 库车汤面, 烤肉, 薄皮包子</li>
+                            <li>推荐餐厅: 库车老城 (热斯坦历史文化街区), 太古里夜市</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-medium text-blue-600 mb-1 flex items-center"><span class="material-icons-outlined mr-1 text-sm">attractions</span>热门景点</h4>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 space-y-1 pl-2">
+                            <li>天山神秘大峡谷, 克孜尔千佛洞</li>
+                            <li>库车王府, 库车大寺, 苏巴什佛寺遗址, 库车老城</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+                     <button class="fab-button bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-transform duration-150 ease-in-out hover:scale-110">
+                        <span class="material-icons-outlined">add_location_alt</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 15 Card -->
+            <div class="card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col border-t-4 border-amber-400">
+                <div class="p-5 flex-grow">
+                    <h3 class="text-lg font-medium text-zinc-700 mb-3 flex items-center">
+                        <span class="material-icons-outlined mr-2 text-amber-500">calendar_today</span>
+                        Day 15: 库车 — 乌鲁木齐 (飞机) — 返程
+                    </h3>
+                    <p class="text-sm text-zinc-600">
+                        根据航班时间，可在库车市区购买一些当地特产，如库车小白杏干、药茶等。
+                    </p>
+                </div>
+                 <div class="p-3 bg-slate-50 border-t border-slate-200 flex justify-end">
+                     <button class="fab-button bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-transform duration-150 ease-in-out hover:scale-110">
+                        <span class="material-icons-outlined">flight_takeoff</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="text-center py-8 text-zinc-500 text-sm">
+        <p>&copy; 2025 新疆15日游攻略 - Material Design 示例</p>
+    </footer>
+
+    <script type="module">
+        import { animate, stagger } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 卡片入场动画
+            const cards = document.querySelectorAll('.card');
+            if (cards.length > 0) {
+                animate(cards,
+                    { y: [30, 0], opacity: [0, 1] },
+                    { delay: stagger(0.07), duration: 0.4, easing: [0.4, 0, 0.2, 1] } // Material Design 'Fast Out, Linear In'
+                );
+            }
+
+            // FAB按钮涟漪效果
+            const fabs = document.querySelectorAll('.fab-button');
+            fabs.forEach(fab => {
+                fab.addEventListener('click', (e) => {
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple');
+                    // Pre-calculate to avoid layout thrashing
+                    const rect = fab.getBoundingClientRect();
+                    fab.appendChild(ripple); // Append after getting rect to include in calculations if needed, but here it's fine
+
+                    const size = Math.max(rect.width, rect.height) * 1.5; // Ripple slightly larger
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.width = ripple.style.height = `${size}px`;
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    
+                    animate(ripple, 
+                        { transform: ['scale(0.5)', 'scale(2.5)'], opacity: [0.6, 0] }, 
+                        { duration: 0.5, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' }
+                    ).finished.then(() => ripple.remove());
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
