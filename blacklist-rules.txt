@@ -10,5 +10,5 @@ payload:
   - DOMAIN-SUFFIX,okta.com
   - DOMAIN-SUFFIX,sheerid.com
   - DOMAIN-KEYWORD,manus
-
-  
+  - DOMAIN-SUFFIX,celebjihad.com
+  - DOMAIN-SUFFIX,xvideos.com
