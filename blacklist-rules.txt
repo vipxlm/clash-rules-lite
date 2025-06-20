@@ -13,3 +13,4 @@ payload:
   - DOMAIN-SUFFIX,xvideos.com
   - DOMAIN-SUFFIX,shspeed.xyz
   - DOMAIN-SUFFIX,mexc.com
+  - DOMAIN-SUFFIX,trae.ai
