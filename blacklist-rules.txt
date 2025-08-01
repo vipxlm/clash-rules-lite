@@ -13,4 +13,4 @@ payload:
   - DOMAIN-SUFFIX,shspeed.xyz
   - DOMAIN-SUFFIX,mexc.com
   - DOMAIN-SUFFIX,trae.ai
-  - DOMAIN-KEYWORD,augmentcode.com
+  - DOMAIN-SUFFIX,augmentcode.com
