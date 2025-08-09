@@ -1,0 +1,18 @@
+payload:
+  - DOMAIN-SUFFIX,gmgn.ai
+  - DOMAIN-SUFFIX,genspark.ai
+  - DOMAIN-SUFFIX,cerebras.ai
+  - DOMAIN-SUFFIX,proxmox.com
+  - DOMAIN-SUFFIX,liberty.edu
+  - DOMAIN-KEYWORD,yourware
+  - DOMAIN-SUFFIX,okta.com
+  - DOMAIN-SUFFIX,sheerid.com
+  - DOMAIN-KEYWORD,manus
+  - DOMAIN-SUFFIX,celebjihad.com
+  - DOMAIN-SUFFIX,xvideos.com
+  - DOMAIN-SUFFIX,shspeed.xyz
+  - DOMAIN-SUFFIX,mexc.com
+  - DOMAIN-SUFFIX,trae.ai
+  - DOMAIN-KEYWORD,augmentcode
+  - DOMAIN-SUFFIX,ping.party
+  
