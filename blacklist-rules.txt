@@ -15,4 +15,4 @@ payload:
   - DOMAIN-SUFFIX,trae.ai
   - DOMAIN-KEYWORD,augmentcode
   - DOMAIN-SUFFIX,ping.party
-  
+  - DOMAIN-KEYWORD,google
