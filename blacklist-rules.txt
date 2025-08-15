@@ -16,3 +16,5 @@ payload:
   - DOMAIN-KEYWORD,augmentcode
   - DOMAIN-SUFFIX,ping.party
   - DOMAIN-KEYWORD,google
+  - DOMAIN-SUFFIX,tushare.pro
+  
