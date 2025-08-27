@@ -18,4 +18,4 @@ payload:
   - DOMAIN-KEYWORD,google
   - DOMAIN-SUFFIX,tushare.pro
   - DOMAIN-SUFFIX,dupay.one
-  
+  - DOMAIN-SUFFIX,o2jam.cc
