@@ -19,3 +19,4 @@ payload:
   - DOMAIN-SUFFIX,tushare.pro
   - DOMAIN-SUFFIX,dupay.one
   - DOMAIN-SUFFIX,pytorch.org
+  - DOMAIN-SUFFIX,temu.com
