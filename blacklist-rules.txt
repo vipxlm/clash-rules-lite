@@ -20,3 +20,6 @@ payload:
   - DOMAIN-SUFFIX,dupay.one
   - DOMAIN-SUFFIX,pytorch.org
   - DOMAIN-SUFFIX,temu.com
+  - DOMAIN-SUFFIX,anygen.io
+
+
