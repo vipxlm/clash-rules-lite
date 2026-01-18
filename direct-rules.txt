@@ -4,6 +4,6 @@ payload:
   - DOMAIN-KEYWORD,microsoft
   - DOMAIN-SUFFIX,xboxlive.com
   - DOMAIN-SUFFIX,gamepass.com
-  - DOMAIN-SUFFIX,malousy.com
-  - DOMAIN-SUFFIX,apps-assets.fit2cloud.com
+
+
 
