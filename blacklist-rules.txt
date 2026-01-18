@@ -22,4 +22,6 @@ payload:
   - DOMAIN-SUFFIX,temu.com
   - DOMAIN-SUFFIX,anygen.io
   - DOMAIN-SUFFIX,malousy.com
+  - DOMAIN-SUFFIX,fit2cloud.com
+
 
