@@ -21,6 +21,8 @@ payload:
   - DOMAIN-SUFFIX,pytorch.org
   - DOMAIN-SUFFIX,temu.com
   - DOMAIN-SUFFIX,anygen.io
+  - DOMAIN-SUFFIX,malousy.com
+  - DOMAIN-SUFFIX,apps-assets.fit2cloud.com
 
 
 
