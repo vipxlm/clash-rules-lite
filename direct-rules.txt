@@ -5,3 +5,4 @@ payload:
   - DOMAIN-SUFFIX,xboxlive.com
   - DOMAIN-SUFFIX,gamepass.com
   - DOMAIN-SUFFIX,home.date
+  - DOMAIN-SUFFIX,apps-assets.fit2cloud.com
