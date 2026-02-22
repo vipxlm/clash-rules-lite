@@ -24,6 +24,8 @@ payload:
   - DOMAIN-SUFFIX,apps-assets.fit2cloud.com
   - DOMAIN-SUFFIX,polymarket.com
   - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-KEYWORD,antigravity
+
 
 
 
